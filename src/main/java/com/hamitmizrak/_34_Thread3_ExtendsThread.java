@@ -35,7 +35,7 @@ public class _34_Thread3_ExtendsThread extends Thread {
 		for (int i = 1; i <= 10; i++) {
 			try {
 				// 1000ms =1 sn uyu
-				Thread.sleep(1000);
+				Thread.sleep(500);
 				if (i == 1) {
 					System.out.println("\n####Baþlangýç####");
 					System.out.println(this.className + "\n");
