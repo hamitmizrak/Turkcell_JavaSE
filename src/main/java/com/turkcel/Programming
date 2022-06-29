@@ -1,0 +1,46 @@
+KURULUMLAR
+
+9 temmuz  -18 Temmuz tatil
+
+git                 ==> https://git-scm.com/download/win
+visual studio code  ==> https://code.visualstudio.com/download
+node js             ==> https://nodejs.org/en/
+postgresql          ==> https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+
+Browser             ==> Google Chrome
+Editor              ==> Notepad++
+
+JDK                 ==> https://www.oracle.com/java/technologies/downloads/#jdk18-windows
+Eclipse             ==> https://www.eclipse.org/downloads/
+Postman             ==> Desktop / Google Chrome Install Plugin
+
+////////////////////////////////////////////////////////////////////////
+
+Çarþamba ==> Thread innerClass
+Perþembe ==> File
+Cuma ==> Socket
+Pazartesi ==> Generics,Collection(List,Set,Map)
+Salý ==> Generics,Collection(List,Set,Map)
+Çarþamba ==> Inheritance , examp
+Perþembe ==> abstract , exam ,interface
+Cuma ==> Software Prensible , SOLID
+		
+postgresql
+Bayram sonrasý: JavaSE + Postgresql
+Java Postgresql (PreparedStatement)
+SQL ==> https://www.w3schools.com/sql/
+SQL ==> https://sqlkodlari.com/
+
+////////////////////////////////////////////////////////////////////////
+Postgresql
+Spring Framework
+(SMTP = mail push)
+Spring MVC
+Spring Data (SMTP = mail push)
+Spring Rest
+Spring Security
+Project + Spring + Thymeleaf ==> OpenAPI , H2Db , Swagger
+
+
+
+
