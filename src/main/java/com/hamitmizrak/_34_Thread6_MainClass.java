@@ -8,6 +8,11 @@ public class _34_Thread6_MainClass {
 		_34_Thread3_ExtendsThread multiple2 = new _34_Thread3_ExtendsThread("2.instance");
 		_34_Thread3_ExtendsThread multiple3 = new _34_Thread3_ExtendsThread("3.instance");
 		
+		// Öncelik sýrasý
+		multiple1.setPriority(Thread.MAX_PRIORITY);
+		multiple2.setPriority(Thread.MIN_PRIORITY);
+		multiple3.setPriority(Thread.NORM_PRIORITY);
+		
 		// start() önce thread yaþamaz
 		// System.out.println("1. thread " + multiple1.isAlive());
 		
@@ -15,10 +20,10 @@ public class _34_Thread6_MainClass {
 		// öncelikle thread 1 bitmesi gerekiyor 1.thread bittikten sonra diðerleri
 		// baþlar
 		multiple1.join();
-		System.out.println("1.Thread ID" + multiple1.getId());
-		System.out.println("1.Thread ID" + multiple1.getName());
-		multiple1.setName("Degisti 1");
-		System.out.println("1.Thread ID" + multiple1.getName());
+		System.out.println("1.Thread ID: " + multiple1.getId());
+		System.out.println("1.Thread ID: " + multiple1.getName());
+		multiple1.setName("Degisti 1: ");
+		System.out.println("1.Thread ID: " + multiple1.getName());
 		System.out.println("******************************************");
 		
 		multiple2.start();
