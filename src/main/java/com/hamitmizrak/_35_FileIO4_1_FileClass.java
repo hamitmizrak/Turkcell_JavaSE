@@ -1,22 +1,36 @@
 package com.hamitmizrak;
 
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class _35_FileIO4_FileClass {
+public class _35_FileIO4_1_FileClass {
 	
 	// Nesne deðiþkenleri (Object variable)
 	private String path;
 	private final String date = createdDate();
 	
 	// parametresizconstructor
-	public _35_FileIO4_FileClass() {
+	public _35_FileIO4_1_FileClass() {
 		this.path = "C:\\turkcell\\data.txt";
+		File file = new File("C:\\turkcell\\data.txt");
+		
+		try {
+			if (file.createNewFile()) {
+				System.out.println("data.txt oluþturuldu!");
+			} else {
+				System.out.println("zaten data.txt dosya var");
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	// parametreli constructor
-	public _35_FileIO4_FileClass(String path) {
+	public _35_FileIO4_1_FileClass(String path) {
 		this.path = path;
 	}
 	
@@ -39,5 +53,4 @@ public class _35_FileIO4_FileClass {
 	public String getDate() {
 		return date;
 	}
-	
 }

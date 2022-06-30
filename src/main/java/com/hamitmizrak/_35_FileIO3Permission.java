@@ -2,8 +2,8 @@ package com.hamitmizrak;
 
 import java.io.File;
 
-enum permission {
-	ADMIN, WRITER, USER;
+enum permission2 {
+	SUPERADMIN, ADMIN, WRITER, USER;
 }
 
 public class _35_FileIO3Permission {
@@ -13,7 +13,7 @@ public class _35_FileIO3Permission {
 		// String[] permissionRoles = { "ADMIN", "WRITER", "USER" };
 		// if(dizileye permissionRoles[1] == "ADMIN")
 		
-		if (permission.ADMIN.toString() == "ADMIN") {
+		if (permission2.SUPERADMIN.toString() == "SUPERADMIN") {
 			boolean data = file.canExecute();
 			data = file.setExecutable(false);
 			if (data) {

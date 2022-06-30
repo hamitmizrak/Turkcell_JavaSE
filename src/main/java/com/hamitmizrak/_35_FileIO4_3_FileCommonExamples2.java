@@ -23,38 +23,56 @@ import java.util.Scanner;
 // homework.txt dosyasýnda ==> verilecek ödevler olacak
 // Bilgisayar random olarak kiþiye ödev verecek
 
-public class _35_FileIO4_FileCommonExamples {
+public class _35_FileIO4_3_FileCommonExamples2 {
 	
 	// Sýnýf deðiþkeni (Class variable)
 	private static Scanner klavye;
 	
-	private static String MY_PATH;
+	// file path
+	private static String MY_PATH = new _35_FileIO4_1_FileClass().getPath();
 	
-	_35_FileIO4_FileClass pathClass;
+	// File new
+	private static File file = new File(MY_PATH);
+	
+	// roles
+	private static int MY_ROLES;
+	
+	// file class
+	_35_FileIO4_1_FileClass pathClass;
 	
 	// parametresiz constructor
-	public _35_FileIO4_FileCommonExamples(_35_FileIO4_FileClass pathClass) {
-		this.pathClass = new _35_FileIO4_FileClass();
+	public _35_FileIO4_3_FileCommonExamples2(_35_FileIO4_1_FileClass pathClass) {
+		this.pathClass = new _35_FileIO4_1_FileClass();
 	}
 	
 	// Chooise Method
 	public static int chooise() {
 		klavye = new Scanner(System.in);
 		System.out.println("Seçim yapýnýz.");
-		System.out.println("0-)Çýkýþ\n1-)Dosya oluþtur\n2-)Dosya Yaz\n3-)Dosya Oku\n4-)Dosya Sil\n5-)Dosya Bilgileri");
+		System.out.println(
+				"0-)Çýkýþ\n1-)Dosya oluþtur\n2-)Dosya Yaz\n3-)Dosya Oku\n4-)Dosya Sil\n5-)Dosya Bilgileri\n6-)Rol deðiþtir\n7-)Bütün Dosyalar");
 		return klavye.nextInt();
 	}
 	
+	// ADMIN(1, "admin"), WRITER(2, "writer"), USER(3, "user");
 	// mainMethod
-	public static void mainMethod() throws IOException {
+	public static void mainMethod(int perm) throws IOException, _35_FileIO4_0_FileClassException {
 		int key = chooise();
 		switch (key) {
 			case 1:
-				createDataFile();
+				if (MY_ROLES != _35_FileIO4_2_Enum.ADMIN.getKey())
+					System.out.println("++++++++\nyetkiniz yok\n");
+				else
+					createDataFile(perm);
 				break;
 			
 			case 2:
-				writeDataFile();
+				System.out.println("Roles: " + MY_ROLES);
+				System.out.println("enum: " + _35_FileIO4_2_Enum.USER.getKey());
+				if (MY_ROLES == _35_FileIO4_2_Enum.USER.getKey()) // MY_ROLES == "USER"
+					System.out.println("++++++++\nyetkiniz yok\n");
+				else
+					writeDataFile();
 				break;
 			
 			case 3:
@@ -62,11 +80,20 @@ public class _35_FileIO4_FileCommonExamples {
 				break;
 			
 			case 4:
-				deleteDataFile();
+				if (MY_ROLES != _35_FileIO4_2_Enum.ADMIN.getKey()) // MY_ROLES != "ADMIN"
+					System.out.println("++++++++\nyetkiniz yok\n");
+				else
+					deleteDataFile();
 				break;
 			
 			case 5:
 				showFileData();
+				break;
+			case 6:
+				permission();
+				break;
+			case 7:
+				allFiles();
 				break;
 			
 			case 0:
@@ -79,10 +106,19 @@ public class _35_FileIO4_FileCommonExamples {
 		}
 	}
 	
+	// permission
+	private static int permission() {
+		klavye = new Scanner(System.in);
+		System.out.println("Rolunüzü yazýnýz\n1-)ADMIN\n2-)WRITER\n3-)USER");
+		int roles = klavye.nextInt();
+		MY_ROLES = roles;
+		return roles;
+	}
+	
 	// data Merge
-	private static String dataMerge(String data) {
+	private static String dataMerge(String fileName) {
 		StringBuilder builder = new StringBuilder();
-		builder.append("C:\\turkcell\\").append(data).append(".txt");
+		builder.append("C:\\turkcell\\").append(fileName).append(".txt");
 		return builder.toString();
 	}
 	
@@ -92,16 +128,16 @@ public class _35_FileIO4_FileCommonExamples {
 		// "C:\\turkcell\\data.txt"
 		System.out.println("Dosya adýný giriniz...");
 		String fileName = klavye.nextLine();
-		_35_FileIO4_FileClass pathClass = new _35_FileIO4_FileClass(dataMerge(fileName));
+		_35_FileIO4_1_FileClass pathClass = new _35_FileIO4_1_FileClass(dataMerge(fileName));
 		return pathClass.getPath();
 	}
 	
 	// create method
-	private static void createDataFile() throws IOException {
+	private static void createDataFile(int perm) throws IOException {
 		System.out.println("*** Dosya Oluþturmak ***");
 		String path = createPath();
 		MY_PATH = path;
-		File file = new File(path);
+		file = new File(path);
 		if (file.createNewFile()) {
 			System.out.println(file.getAbsolutePath() + " Dosya oluþturuldu");
 		} else {
@@ -112,12 +148,15 @@ public class _35_FileIO4_FileCommonExamples {
 	/////// write method
 	private static void writeDataFile() {
 		System.out.println("*** Dosya Yaz ***");
+		klavye = new Scanner(System.in);
+		System.out.println("Dosya yazmak için birþeyler yazýnýz...");
+		String vocabulary = klavye.nextLine();
+		System.out.println(MY_PATH);
 		try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(MY_PATH, true))) {
-			klavye = new Scanner(System.in);
-			System.out.println("Dosya yazmak için birþeyler yazýnýz...");
-			String vocabulary = klavye.nextLine();
-			_35_FileIO4_FileClass class1 = new _35_FileIO4_FileClass();
-			bufferedWriter.write(class1.getDate() + " ==> " + vocabulary);
+			// _35_FileIO4_1_FileClass class1 = new _35_FileIO4_1_FileClass();
+			// bufferedWriter.write("ROL: " + MY_ROLES + " ==>" + class1.getDate() + " ==> "
+			// + vocabulary);
+			bufferedWriter.write(vocabulary);
 			bufferedWriter.flush();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -142,10 +181,37 @@ public class _35_FileIO4_FileCommonExamples {
 		
 	}
 	
+	// bütün dosyalar
+	private static String allFiles() {
+		String baseFilePath = file.getParent();
+		System.out.println(baseFilePath);
+		System.out.println("#########");
+		for (File temp : new File(baseFilePath).listFiles()) {
+			System.err.println(temp.getName());
+		}
+		System.out.println("#########");
+		return baseFilePath;
+	}
+	
 	///// delete method
-	private static void deleteDataFile() {
+	private static void deleteDataFile() throws _35_FileIO4_0_FileClassException {
 		System.out.println("*** Dosya Sil ***");
+		klavye = new Scanner(System.in);
+		String tempBaseFile = allFiles();
+		System.out.println("Silmek istediðiniz dosya yazýnýz");
+		String filesName = klavye.nextLine();
+		String fileConcat = tempBaseFile + "\\" + filesName + ".txt";
+		File deleteFile = new File(fileConcat);
+		
 		// try-with resources
+		if (deleteFile.exists()) {
+			System.out.println("Dosyanýz siliniyor");
+			deleteFile.delete();
+		} else {
+			System.out.println("Dosyanýz silinemedi");
+			// kendi exception yazdým
+			throw new _35_FileIO4_0_FileClassException("Silinemedi");
+		}
 	}
 	
 	////// exit
@@ -165,10 +231,16 @@ public class _35_FileIO4_FileCommonExamples {
 		System.out.println("Deðiþikliði Tarihi: " + new Date(file.lastModified()));
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws _35_FileIO4_0_FileClassException {
 		try {
+			// sadece 1 kere rol istesin
+			int perm = permission();
+			MY_ROLES = perm;
 			for (;;) {
-				mainMethod();
+				
+				synchronized (args) {
+					mainMethod(perm);
+				}
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
