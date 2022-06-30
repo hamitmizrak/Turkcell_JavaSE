@@ -1,0 +1,7 @@
+Video ve Resimlerde neden byte[] dizisi kullanılıyor
+
+Bir resmi byte dizisi olarak tuttuğumuz zaman, resmin her pikselinin bilgisini depolar.
+Resim ve Video'ları farklı türde uygulamalarda daha kolay saklanabilmesi veya 
+aktarılabilmesi için bir diziye dönüştürülür. Örnek olarak veri tabanına resim veya video'yu 
+direk kaydedemeyiz. Bunun için resim ve videoları byte dizisi olarak tutup veri tabanına BLOB 
+türünde kaydedebiliriz.
