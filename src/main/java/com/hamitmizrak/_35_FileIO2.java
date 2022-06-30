@@ -1,13 +1,13 @@
 package com.hamitmizrak;
 
 import java.io.File;
+import java.util.Date;
 
 public class _35_FileIO2 {
-	private static final String MY_PATH = "C:\\turkcell\\data.txt";
 	
 	public static void main(String[] args) {
 		try {
-			File file = new File(MY_PATH);
+			File file = new File(_35_FileIO.MY_PATH);
 			
 			// isFile() ==> Dosya mý
 			
@@ -43,7 +43,11 @@ public class _35_FileIO2 {
 				
 				// file information
 				System.out.println("***** INFORMATION ****************");
+				System.out.println("toplam karakter sayýsý: " + file.length());
+				System.out.println("Deðiþikliði Tarihi: " + new Date(file.lastModified()));
 				System.out.println("absolute path: " + file.getAbsolutePath());
+				System.out.println("normal path: " + file.getPath());
+				System.out.println("CanonicalPath: " + file.getCanonicalPath());
 				System.out.println("toplam GB : " + file.getTotalSpace());
 				System.out.println("kullanýlabileceðin GB : " + file.getUsableSpace());
 			} else {

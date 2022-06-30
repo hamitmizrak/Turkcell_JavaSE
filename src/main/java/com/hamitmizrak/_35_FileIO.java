@@ -26,5 +26,6 @@ public class _35_FileIO {
 	// Java escape character ==> \
 	// Windows'ta ==> \
 	// Linux'ta ==> /
+	public static final String MY_PATH = "C:\\turkcell\\data.txt";
 	
 }
