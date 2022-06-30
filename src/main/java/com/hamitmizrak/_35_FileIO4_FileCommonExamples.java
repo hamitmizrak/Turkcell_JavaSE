@@ -10,8 +10,14 @@ import java.util.Date;
 import java.util.Scanner;
 
 // step.1 -) File için CRUD iþlemi yapacak bir algoritma yapýnýz ?
-// step.2 -) Bir Dosya okuyacak baþka bir dosyaya verileri yazacak ( Object)
-// step.3 -) Bu projemiz þunuda yapsýn ?
+
+// step.2 -) oluþturulan her bir dosyaya enum ile
+// ADMIN(yazma,okuma,oluþturmadýr),WRITER(yazma veokumadaýr),USER(okumak)
+// rollerini en sola yazalým ==> ADMIN 30/Haziran/2022 12:26:01 yazdýmmm
+
+// step.3 -) Bir Dosya okuyacak baþka bir dosyaya verileri yazacak ( Object)
+
+// step.4 -) Bu projemiz þunuda yapsýn ?
 // person.txt ve homework.txt diye bir dosyamýz olsun bu dosyalar
 // person.txt dosyasýnda ==> kiþi ismi ve soyisimi olacak
 // homework.txt dosyasýnda ==> verilecek ödevler olacak
