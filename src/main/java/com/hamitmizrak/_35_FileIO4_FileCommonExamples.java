@@ -6,7 +6,16 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Date;
 import java.util.Scanner;
+
+// step.1 -) File için CRUD iþlemi yapacak bir algoritma yapýnýz ?
+// step.2 -) Bir Dosya okuyacak baþka bir dosyaya verileri yazacak ( Object)
+// step.3 -) Bu projemiz þunuda yapsýn ?
+// person.txt ve homework.txt diye bir dosyamýz olsun bu dosyalar
+// person.txt dosyasýnda ==> kiþi ismi ve soyisimi olacak
+// homework.txt dosyasýnda ==> verilecek ödevler olacak
+// Bilgisayar random olarak kiþiye ödev verecek
 
 public class _35_FileIO4_FileCommonExamples {
 	
@@ -17,8 +26,8 @@ public class _35_FileIO4_FileCommonExamples {
 	
 	_35_FileIO4_FileClass pathClass;
 	
+	// parametresiz constructor
 	public _35_FileIO4_FileCommonExamples(_35_FileIO4_FileClass pathClass) {
-		
 		this.pathClass = new _35_FileIO4_FileClass();
 	}
 	
@@ -26,7 +35,7 @@ public class _35_FileIO4_FileCommonExamples {
 	public static int chooise() {
 		klavye = new Scanner(System.in);
 		System.out.println("Seçim yapýnýz.");
-		System.out.println("0-)Çýkýþ\n1-)Dosya oluþtur\n2-)Dosya Yaz\n3-)Dosya Oku\n4-)Dosya Sil");
+		System.out.println("0-)Çýkýþ\n1-)Dosya oluþtur\n2-)Dosya Yaz\n3-)Dosya Oku\n4-)Dosya Sil\n5-)Dosya Bilgileri");
 		return klavye.nextInt();
 	}
 	
@@ -48,6 +57,10 @@ public class _35_FileIO4_FileCommonExamples {
 			
 			case 4:
 				deleteDataFile();
+				break;
+			
+			case 5:
+				showFileData();
 				break;
 			
 			case 0:
@@ -129,11 +142,21 @@ public class _35_FileIO4_FileCommonExamples {
 		// try-with resources
 	}
 	
-	//////
+	////// exit
 	private static void systemExist() {
 		System.out.println("*** Çýkýþ ***");
 		System.exit(0);
 		
+	}
+	
+	// show file
+	private static void showFileData() {
+		File file = new File(MY_PATH);
+		System.out.println("toplam karakter sayýsý: " + file.length());
+		System.out.println("toplam GB : " + file.getTotalSpace());
+		System.out.println("absolute path: " + file.getAbsolutePath());
+		System.out.println("kullanýlabileceðin GB : " + file.getUsableSpace());
+		System.out.println("Deðiþikliði Tarihi: " + new Date(file.lastModified()));
 	}
 	
 	public static void main(String[] args) {
@@ -141,10 +164,8 @@ public class _35_FileIO4_FileCommonExamples {
 			for (;;) {
 				mainMethod();
 			}
-			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 	}
 }
