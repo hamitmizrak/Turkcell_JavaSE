@@ -9,15 +9,27 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.Scanner;
 
-// step.1 -) File için CRUD iþlemi yapacak bir algoritma yapýnýz ?
+// step.1 -) Data.txt dosyasýný default olarak oluþtururmamýz gerekiyor ?
+// step.2 -) Roller belirliyoruz 1-)ADMIN(X+,W+,R+) 2-)WRITER(X-,W+,R+)
+// 3-)USER(X-, W- ,R+) x=execute w=write r=read
+// step.1 -) Sonrasýnda ekranda Seçim için
 
-// step.2 -) oluþturulan her bir dosyaya enum ile
+// ### SEÇIM YAPINIZ ###
+// 0-)Çýkýþ
+// 1-)Dosya oluþtur
+// 2-)Dosya Yaz
+// 3-)Dosya Oku
+// 4-)Dosya Sil
+// 5-)Dosya Bilgileri
+// 6-)Rol deðiþtir
+// 7-)Bütün Dosyalar
+
+// step.3 -) File için CRUD iþlemi yapacak bir algoritma yapýnýz ?
+// step.4 -) oluþturulan her bir dosyaya enum ile
 // ADMIN(yazma,okuma,oluþturmadýr),WRITER(yazma veokumadaýr),USER(okumak)
 // rollerini en sola yazalým ==> ADMIN 30/Haziran/2022 12:26:01 yazdýmmm
-
-// step.3 -) Bir Dosya okuyacak baþka bir dosyaya verileri yazacak ( Object)
-
-// step.4 -) Bu projemiz þunuda yapsýn ?
+// step.5 -) Bir Dosya okuyacak baþka bir dosyaya verileri yazacak ( Object)
+// step.6 -) Bu projemiz þunuda yapsýn ?
 // person.txt ve homework.txt diye bir dosyamýz olsun bu dosyalar
 // person.txt dosyasýnda ==> kiþi ismi ve soyisimi olacak
 // homework.txt dosyasýnda ==> verilecek ödevler olacak
@@ -48,7 +60,8 @@ public class _35_FileIO4_3_FileCommonExamples2 {
 	// Chooise Method
 	public static int chooise() {
 		klavye = new Scanner(System.in);
-		System.out.println("Seçim yapýnýz.");
+		String originStaticValue = "### Seçim Yapýnýz ###".toUpperCase();
+		System.out.println(originStaticValue);
 		System.out.println(
 				"0-)Çýkýþ\n1-)Dosya oluþtur\n2-)Dosya Yaz\n3-)Dosya Oku\n4-)Dosya Sil\n5-)Dosya Bilgileri\n6-)Rol deðiþtir\n7-)Bütün Dosyalar");
 		return klavye.nextInt();
@@ -89,9 +102,11 @@ public class _35_FileIO4_3_FileCommonExamples2 {
 			case 5:
 				showFileData();
 				break;
+			
 			case 6:
 				permission();
 				break;
+			
 			case 7:
 				allFiles();
 				break;
@@ -161,7 +176,6 @@ public class _35_FileIO4_3_FileCommonExamples2 {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 	}
 	
 	//////// read method
@@ -178,7 +192,6 @@ public class _35_FileIO4_3_FileCommonExamples2 {
 			System.out.println("Okumada sorun oluþtu");
 			e.printStackTrace();
 		}
-		
 	}
 	
 	// bütün dosyalar
@@ -204,6 +217,7 @@ public class _35_FileIO4_3_FileCommonExamples2 {
 		File deleteFile = new File(fileConcat);
 		
 		// try-with resources
+		// dosya var mý ?
 		if (deleteFile.exists()) {
 			System.out.println("Dosyanýz siliniyor");
 			deleteFile.delete();
@@ -218,7 +232,6 @@ public class _35_FileIO4_3_FileCommonExamples2 {
 	private static void systemExist() {
 		System.out.println("*** Çýkýþ ***");
 		System.exit(0);
-		
 	}
 	
 	// show file
@@ -231,13 +244,13 @@ public class _35_FileIO4_3_FileCommonExamples2 {
 		System.out.println("Deðiþikliði Tarihi: " + new Date(file.lastModified()));
 	}
 	
+	// PSVM
 	public static void main(String[] args) throws _35_FileIO4_0_FileClassException {
 		try {
 			// sadece 1 kere rol istesin
 			int perm = permission();
 			MY_ROLES = perm;
 			for (;;) {
-				
 				synchronized (args) {
 					mainMethod(perm);
 				}

@@ -12,11 +12,11 @@ public class _35_FileIO4_1_FileClass {
 	private String path;
 	private final String date = createdDate();
 	
-	// parametresizconstructor
+	// parametresiz constructor
 	public _35_FileIO4_1_FileClass() {
 		this.path = "C:\\turkcell\\data.txt";
 		File file = new File("C:\\turkcell\\data.txt");
-		
+		// default olarak Data.txt oluþturmak
 		try {
 			if (file.createNewFile()) {
 				System.out.println("data.txt oluþturuldu!");
@@ -26,7 +26,6 @@ public class _35_FileIO4_1_FileClass {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 	}
 	
 	// parametreli constructor
@@ -34,6 +33,7 @@ public class _35_FileIO4_1_FileClass {
 		this.path = path;
 	}
 	
+	// Þimdiki zamaný veren method
 	private String createdDate() {
 		Locale locale = new Locale("tr", "TR");
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MMMM/yyyy HH:mm:ss", locale);
