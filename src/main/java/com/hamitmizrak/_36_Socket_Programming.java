@@ -14,7 +14,8 @@ public class _36_Socket_Programming {
 	// UDP:güvensizdir,karþý tarafa data gidip gitmediðini kontrol etmeezzzzzz.
 	// Hýzlýdýr. Canlý Live Stream (Online system)
 	
-	// RMI: Remote Method Invocation: Farklý sunuculardaki metotlarý çaðýrýp iþlem
+	// RPC > RMI(Java): Remote Method Invocation: Farklý sunuculardaki metotlarý
+	// çaðýrýp iþlem
 	// yapýlmasý durumudur.
 	
 	// 2^16=65536 port sayýsý (Kapý)
