@@ -21,16 +21,11 @@ public class _36_Socket_Programming2_oneway_x2_String_Client {
 	// Client Method
 	private static void clientMethod() {
 		
-		// port
-		int serverPort = _36_Socket_Programming2_oneway_x1_String_Server.PORT;
-		
-		// ipaddres
-		String ipaddress = _36_Socket_Programming2_oneway_x1_String_Server.ipAddress;
-		
 		// kullanýcýdan alacaðým veri
 		String vocabulary = JOptionPane.showInputDialog("Lütfen birþeyler yazýnýz");
 		
-		try (DataOutputStream dataOutputStream = new DataOutputStream(new Socket(ipaddress, 6363).getOutputStream())) {
+		try (DataOutputStream dataOutputStream = new DataOutputStream(
+				new Socket(_36_Socket_Programming.ipAddress, _36_Socket_Programming.PORT).getOutputStream())) {
 			dataOutputStream.writeUTF(vocabulary);
 		} catch (IOException e) {
 			System.out.println("Client Method IOException Error ");

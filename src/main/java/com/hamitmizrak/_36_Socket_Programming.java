@@ -1,5 +1,7 @@
 package com.hamitmizrak;
 
+import java.util.Random;
+
 public class _36_Socket_Programming {
 	// Daðýtýk Programlama (distributed System) :Ayný networkteki bilgisayarlarýn
 	// birbiriyle haberleþmesine denilir.
@@ -30,6 +32,20 @@ public class _36_Socket_Programming {
 	// Mysql:3306
 	
 	// 49152<=X<=65535 Dynamic Port
+	
+	public static int PORT = 9696;
+	public static String ipAddress = "localhost"; // 127.0.0.1
+	
+	// Override edilmesin
+	private static int randomInt() {
+		Random random = new Random();
+		int number = random.nextInt(65535) + 1;
+		return number;
+	}
+	
+	public _36_Socket_Programming() {
+		
+	}
 	
 	public static void main(String[] args) {
 		System.out.println(Math.pow(2, 16)); // 65536 port
