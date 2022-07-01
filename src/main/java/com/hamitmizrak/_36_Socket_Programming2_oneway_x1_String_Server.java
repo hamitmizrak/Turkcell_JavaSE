@@ -1,29 +1,24 @@
 package com.hamitmizrak;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.DataInputStream;
 import java.net.ServerSocket;
-import java.net.Socket;
 import java.util.Random;
 
-// One Way (Cleint -Server String examples)
-// Client Servera veri göndersin Server gelen bu data alsýn büyük harflere ve
-// length hesaplayan algoritma ?
+// One Way (Clint -Server String examples)
+// Client Kullanýcýdan aldýðý veriyi Servera göndersin
+// Server gelen bu data alsýn büyük harflere ve length hesaplayan algoritma ?
 
 // Unutma:
-// 1-)öncelikle Server'ý çalýþtýrmalýsýn.
+// 1-)öncelikle Server'ý çalýþtýrmalýsýn. Sonra Client'i çalýþtýrýyoruz.
 // 2-) PSVM ==> Serverda olur.
-// java.net
-
-// Önce Server'ý hazýrlamalýyýz.
-// Sonra Client'i çalýþtýrýyoruz.
+// 3-) java.net kütüphanesini import ediyoruz
 
 // Random 49152<=X<=65535
 public class _36_Socket_Programming2_oneway_x1_String_Server {
 	
 	// Port
-	private static int PORT;
+	static int PORT;
+	static String ipAddress = "localhost"; // 127.0.0.1
 	
 	// Override edilmesin
 	private static final int randomInt() {
@@ -34,33 +29,26 @@ public class _36_Socket_Programming2_oneway_x1_String_Server {
 	
 	// Server Method
 	private static void serverMethod() {
-		try {
-			PORT = randomInt();
-			System.out.println("Port: " + PORT);
-			// java.net.SocketException: Socket is not bound yet: Port eklenmemiþ
-			// java.net.BindException: Address already in use: bind : Ayný Portu Tekrar
-			// kullandýnýz
-			// server: Clienttan gelen veriyi okumasý gerekiyor.
-			
-			ServerSocket socket = new ServerSocket(PORT);
-			Socket successPort = socket.accept();
-			System.out.println("Server Hazýr...");
-			InputStreamReader inputStreamReader = new InputStreamReader(successPort.getInputStream());
-			BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-			
-			// BufferedReader bufferedReader2=new BufferedReader(new InputStreamReader((new
-			// ServerSocket(4999).accept().getInputStream())));
-			
-			// clienttan gelen veriyi almak göstermek
-			String str = bufferedReader.readLine();
-			System.out.println("Client: " + str);
-			
-		} catch (IOException e) {
+		String clientValue, bigLetter;
+		System.out.println("Server Hazýr...");
+		
+		// java.net.SocketException: Socket is not bound yet: Port eklenmemiþ
+		// java.net.BindException: Address already in use: bind : Ayný Portu Tekrar
+		// kullandýnýz
+		// server: Clienttan gelen veriyi okumasý gerekiyor.
+		PORT = randomInt();
+		System.out.println("Port: " + 6363);
+		
+		try (DataInputStream dataInputStream = new DataInputStream(new ServerSocket(6363).accept().getInputStream())) {
+			clientValue = dataInputStream.readUTF();
+			bigLetter = clientValue.toUpperCase();
+			System.out.println();
+			System.out.println(bigLetter + " Harf Sayýsý: " + bigLetter.length());
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
-	// PSVM
 	public static void main(String[] args) {
 		serverMethod();
 	}
