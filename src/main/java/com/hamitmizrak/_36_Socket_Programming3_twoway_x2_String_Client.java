@@ -19,12 +19,14 @@ import java.net.Socket;
 
 public class _36_Socket_Programming3_twoway_x2_String_Client {
 	
-	public static void main(String[] args) {
-		String receiveMessage;// mesaj almak
-		String sendMessage; // mesa j göndersin
-		
+	// deðiþkenler
+	private static String receiveMessage;// mesaj almak
+	private static String sendMessage; // mesa j göndersin
+	
+	// twoWayClient
+	private static void twoWayClient() {
 		try {
-			Socket socket = new Socket("localhost", 8585);
+			Socket socket = new Socket("localhost", 4545);
 			
 			// Client veri gönderecek
 			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -49,7 +51,10 @@ public class _36_Socket_Programming3_twoway_x2_String_Client {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 	}
 	
+	// PSVM
+	public static void main(String[] args) {
+		twoWayClient();
+	}
 }

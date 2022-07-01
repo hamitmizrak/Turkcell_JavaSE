@@ -18,14 +18,17 @@ import javax.swing.JOptionPane;
 // Random 49152<=X<=65535
 public class _36_Socket_Programming2_oneway_x2_String_Client {
 	
+	static _36_Socket_Programming information = new _36_Socket_Programming();
+	
+	// deðiþkenler
+	private static String IP_ADDRESS = information.readDataFile()[0];
+	private static int PORT = Integer.valueOf(information.readDataFile()[1]);
+	
 	// Client Method
 	private static void clientMethod() {
-		
 		// kullanýcýdan alacaðým veri
 		String vocabulary = JOptionPane.showInputDialog("Lütfen birþeyler yazýnýz");
-		
-		try (DataOutputStream dataOutputStream = new DataOutputStream(
-				new Socket(_36_Socket_Programming.ipAddress, _36_Socket_Programming.PORT).getOutputStream())) {
+		try (DataOutputStream dataOutputStream = new DataOutputStream(new Socket(IP_ADDRESS, PORT).getOutputStream())) {
 			dataOutputStream.writeUTF(vocabulary);
 		} catch (IOException e) {
 			System.out.println("Client Method IOException Error ");

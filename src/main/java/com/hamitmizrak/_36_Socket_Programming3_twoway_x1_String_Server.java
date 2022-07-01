@@ -20,13 +20,15 @@ import java.net.Socket;
 
 public class _36_Socket_Programming3_twoway_x1_String_Server {
 	
-	public static void main(String[] args) {
-		String receiveMessage;// mesaj almak
-		String sendMessage; // mesa j göndersin
-		System.out.println("Server Hazýr");
-		
+	// deðiþkenler
+	private static String receiveMessage;// mesaj almak
+	private static String sendMessage; // mesa j göndersin
+	
+	// two way Server
+	private static void twoWayServer() {
 		try {
-			ServerSocket serverSocket = new ServerSocket(8585);
+			System.out.println("Server Hazýr");
+			ServerSocket serverSocket = new ServerSocket(4545);
 			Socket socket = serverSocket.accept();
 			
 			OutputStream outputStream = socket.getOutputStream();
@@ -40,6 +42,7 @@ public class _36_Socket_Programming3_twoway_x1_String_Server {
 			while (true) {
 				if ((receiveMessage = receiveRead.readLine()) != null) {
 					System.out.println("CLIENT: " + receiveMessage);
+					// dosya writer
 				}
 				sendMessage = bufferedReader.readLine();
 				printWriter.println(sendMessage);
@@ -48,6 +51,11 @@ public class _36_Socket_Programming3_twoway_x1_String_Server {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	// PSVM
+	public static void main(String[] args) {
+		twoWayServer();
 	}
 	
 }
