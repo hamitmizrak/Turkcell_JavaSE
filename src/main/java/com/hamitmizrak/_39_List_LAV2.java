@@ -76,20 +76,20 @@ public class _39_List_LAV2<T> {
 		
 		// remove: Listedeki veriyi siler
 		// remove: ister String ister number olarak silinir.
-		// listem.remove(0);
-		// listem.remove(0);
-		// listem.remove("Adana");
-		// System.out.println("\n**** remove döngüsü ****");
-		// for (String temp : listem) {
-		// System.out.print(temp + " ");
-		// }
+		listem.remove(0);
+		listem.remove(0);
+		listem.remove("Adana");
+		System.out.println("\n**** remove döngüsü ****");
+		for (String temp : listem) {
+			System.out.print(temp + " ");
+		}
 		
 		// clear(): listedeki bütün elemanlarý siler
-		// listem.clear();
-		// System.out.println("\n**** remove döngüsü ****");
-		// for (String temp : listem) {
-		// System.out.print(temp + " ");
-		// }
+		listem.clear();
+		System.out.println("\n**** remove döngüsü ****");
+		for (String temp : listem) {
+			System.out.print(temp + " ");
+		}
 		
 	}
 	
