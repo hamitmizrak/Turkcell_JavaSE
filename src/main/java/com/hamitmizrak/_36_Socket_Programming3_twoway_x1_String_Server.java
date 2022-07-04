@@ -10,19 +10,20 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 // Two Way (Clint -Server String examples)
-// Client Kullanýcýdan aldýðý veriyi Servera göndersin
+// Client Kullanýcýdan aldýðý veriyi Servera göndersin Server Client'a veri
+// göndersin
 // Client -Server yazýþmasýný File Yazdýrsýn.
 
 // Unutma:
 // 1-)öncelikle Server'ý çalýþtýrmalýsýn. Sonra Client'i çalýþtýrýyoruz.
-// 2-) PSVM ==> Serverda olur.
+// 2-) PSVM ==> Server ve Clientda olur.
 // 3-) java.net kütüphanesini import ediyoruz
 
 public class _36_Socket_Programming3_twoway_x1_String_Server {
 	
 	// deðiþkenler
-	private static String receiveMessage;// mesaj almak
-	private static String sendMessage; // mesa j göndersin
+	private static String receiveMessage;// mesaj almak (Client gelen mesajlar)
+	private static String sendMessage; // mesaj göndersin (Clientta mesaj gönder)
 	
 	// two way Server
 	private static void twoWayServer() {

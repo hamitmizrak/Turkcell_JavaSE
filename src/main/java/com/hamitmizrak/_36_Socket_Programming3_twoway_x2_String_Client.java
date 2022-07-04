@@ -20,8 +20,8 @@ import java.net.Socket;
 public class _36_Socket_Programming3_twoway_x2_String_Client {
 	
 	// deðiþkenler
-	private static String receiveMessage;// mesaj almak
-	private static String sendMessage; // mesa j göndersin
+	private static String receiveMessage;// mesaj almak ( Server veri almak)
+	private static String sendMessage; // mesaj göndersin (Servera mesaj göndermek)
 	
 	// twoWayClient
 	private static void twoWayClient() {

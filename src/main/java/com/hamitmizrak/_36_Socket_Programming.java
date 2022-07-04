@@ -11,7 +11,7 @@ public class _36_Socket_Programming {
 	// Daðýtýk Programlama (distributed System) :Ayný networkteki bilgisayarlarýn
 	// birbiriyle haberleþmesine denilir.
 	// Senkron : Ayný anda tek bir iþlem yapabilme yeteneðidir.
-	// Senkron : Ayný anda birden fazla iþlem yapabilme yeteneðidir.
+	// ASenkron : Ayný anda birden fazla iþlem yapabilme yeteneðidir.
 	// TCP/IP UDP (Client:istemci(Hizmet alan) Server:Hizmet veren :
 	// TCP/IP ~ UDP ==> Aðdaki Bilgisayarlarýn birbiriyle haberleþmesini saðlayan
 	// protokol adýdýr.
@@ -38,9 +38,11 @@ public class _36_Socket_Programming {
 	
 	// 49152<=X<=65535 Dynamic Port
 	
+	// IP ADDRESS
 	private String ippAddress = "localhost"; // 127.0.0.1
+	// PORT
 	private String port = "8888";
-	
+	// PATH
 	private static final String MY_PATH = "C:\\turkcell\\Socket.txt";
 	
 	// Method Random
