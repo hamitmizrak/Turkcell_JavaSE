@@ -11,6 +11,10 @@ import java.util.List;
 // LinkedList:Araya yerleþtirme, silme iþlemlerinde biçilmiþ kaftan
 // ArrayList: Ekleme ve Arama için biçilmiþ kaftan
 // Vector: veri defaulta 10 bunun dolacaðýný anladðýnda dinamik olarak Hafýza
+
+// Stack=LIFO
+// List=Asenkron ve indis olarak çalýþýyor.
+
 // uzayý artýrýr.
 public class _39_List_LAV<T> {
 	
