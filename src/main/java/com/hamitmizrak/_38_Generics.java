@@ -23,6 +23,23 @@ public class _38_Generics<T> {
 		this.data = data;
 	}
 	
+	// normal Method
+	public void normalMethod(String data) {
+		System.out.println(data);
+	}
+	
+	// Generic Method
+	// dikkat: class ile ayný generic sembolu kullanma yani "T" kullanma
+	public <K> void genericsMethod1(K data) {
+		System.out.println(data);
+	}
+	
+	// Generic Method
+	// dikkat: class ile ayný generic sembolu kullanma yani "T" kullanma
+	public <K> void genericsMethod2(K data1, K data2) {
+		System.out.println(data1 + " " + data2);
+	}
+	
 	// getter and setter
 	public T getData() {
 		return data;
@@ -39,6 +56,11 @@ public class _38_Generics<T> {
 		_38_Generics sinif = new _38_Generics();
 		sinif.setData(true);
 		System.out.println(sinif.getData());
+		
+		System.out.println("******** Generic method ********************");
+		sinif.normalMethod("kelime");
+		sinif.genericsMethod1(44);
+		sinif.genericsMethod2(true, "merhabalar");
 		
 		// dinamik bir veri parametreli constructor gönderim þekli
 		System.out.println("********** dinamik bir veri parametreli  constructor   ******************");
