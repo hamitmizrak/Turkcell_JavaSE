@@ -33,6 +33,10 @@ public class _39_List_LAV7_Stack {
 		for (int i = 0; i < stack.size(); i++) {
 			System.out.println(stack.get(i));
 		}
+		
+		stack.remove(0);
+		stack.clear();
+		
 	}
 	
 	public static void main(String[] args) {
