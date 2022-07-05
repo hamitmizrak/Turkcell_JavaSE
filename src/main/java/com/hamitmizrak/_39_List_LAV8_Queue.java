@@ -31,9 +31,7 @@ public class _39_List_LAV8_Queue {
 		while (iterator.hasNext()) {
 			System.out.print(iterator.next() + " ");
 		}
-		
 		queue.clear();
-		
 	}
 	
 	public static void main(String[] args) {
