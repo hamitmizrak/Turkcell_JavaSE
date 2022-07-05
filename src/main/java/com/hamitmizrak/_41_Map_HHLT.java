@@ -75,6 +75,21 @@ public class _41_Map_HHLT {
 		System.out.println("\n**** 6- Stream ForEach****");
 		mapList.entrySet().forEach(System.out::println);
 		
+		// map eleman sayýsý
+		mapList.size();
+		
+		// String'e çevirmek
+		mapList.toString();
+		
+		// hash code
+		mapList.hashCode();
+		
+		// ilgili veriyi getirmek
+		mapList.get(0);
+		
+		// listeden verileri siler
+		mapList.clear();
+		
 	}
 	
 	public static void main(String[] args) {
