@@ -67,9 +67,13 @@ public class _41_Map_HHLT {
 			System.out.println(mapList.get(iterator.next()));
 		}
 		
-		System.out.println("\n**** 5- M-E-LES ****");
+		System.out.println("\n**** 5- M-E-l-es ****");
+		for (Map.Entry<String, Object> temp : mapList.entrySet()) {
+			System.out.println(temp);
+		}
 		
 		System.out.println("\n**** 6- Stream ForEach****");
+		mapList.entrySet().forEach(System.out::println);
 		
 	}
 	
