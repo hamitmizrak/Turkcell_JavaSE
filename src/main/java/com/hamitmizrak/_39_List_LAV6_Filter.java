@@ -13,6 +13,11 @@ public class _39_List_LAV6_Filter<T> {
 		_39_List_LAV6_FilterClass obje2 = new _39_List_LAV6_FilterClass(2, "isim2 soyisim2", 2);
 		_39_List_LAV6_FilterClass obje3 = new _39_List_LAV6_FilterClass(3, "isim3 soyisim3", 3);
 		
+		// Arrays.sort(dizi);
+		// Arrays.binarySearch(dizi);
+		// Arrays.asList(dizi);
+		// Arrays.stream(dizi);
+		
 		List<_39_List_LAV6_FilterClass> filterClass = Arrays.asList(obje1, obje2, obje3);
 		for (_39_List_LAV6_FilterClass temp : filterClass) {
 			if (temp.getPrice() >= 2) {
