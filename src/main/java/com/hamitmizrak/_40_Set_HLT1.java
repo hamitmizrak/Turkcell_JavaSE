@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class _40_List_HLT1 {
+public class _40_Set_HLT1 {
 	
 	// set:
 	// interface
@@ -51,9 +51,11 @@ public class _40_List_HLT1 {
 		// boþ mu
 		iller.isEmpty();
 		
+		// Remove
+		iller.remove("Diyarbakýr");
+		
 		// listede verileri temizlemek
 		iller.clear();
-		
 	}
 	
 	public static void main(String[] args) {
