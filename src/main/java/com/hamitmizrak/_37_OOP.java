@@ -102,17 +102,69 @@ package com.hamitmizrak;
 // compiler error
 // syntac error
 
-// katmanlý mimari:
+// business layer:
+
+// katmanlý mimari: n-tier architecture - monolitik architecture
 
 // Java => % 100 By pass value
 
-// MVC nedir ?
-
-// UML diagram ?
+// MVC nedir ? Model-Controller-View
 
 // ER Diagram nedir ?
 
-// JIRA nedir ?
+// JIRA nedir ? Prpje yönetim program aracýdýr.
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// UML diagram ?
+// Unifield Modeling Language :
+// 1995 standart bir dil oluþturalým. bunun adýna UML
+// UML: Bir modelleme dilidir.
+// standartlaþtýrýlmýþ kalýplar bize sunar
+// Büyük resmi görmemize olanak saðlar.
+// Yazýlýmýclar ve diðer deparment kiþilerin basit , kolay, bir þekilde
+// anlaþabilmesini saðlar.
+// Karmaþýklýk basitleþtirilmesini saðlamak
+
+// Tool: umlet , draw.io , paint 3D
+// creately.com
+
+// UML Çeþitleri:
+// 1-) Yapý Diagram (database modelleme vs)
+// 2-) Davranýþ modelleme (Baþlangýç-Bitiþ göstermek)
+
+// Bilmemiz gerekir.
+// public,private,protected
+// method
+// class
+// packet
+// inheritance,interface,abstract
+
+// UML class
+// 1-) CLASS
+// 2-) DEÐÝÞKENLER
+// 3-) METOTLAR
+
+// public (+)
+// private (-)
+// protected (#)
+// static (__)
+// public void deneme(int sayi1,int sayi2) {} ==>
+// +deneme(sayi1:number,sayi:number):void
+
+// DevOps bir felsefedir.
+// Developers and Operations : Bilgi Teknolojileri (IT)
+// Agile
+
+// OOP 4 temel Prensibi nelerdir ?
+// I ==> Inheritance/Kalýtým)
+// P ==> Polymorhism (Çok Biçimlilik)
+// E ==> Encapsulation (sarmalayýcý)
+// A ==> Abstraction(abstract+interface)
+// abstraction: Soyutlama
+// abstract:soyut
+
+// SOLID
 
 public class _37_OOP {
 	
