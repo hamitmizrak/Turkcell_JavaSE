@@ -6,7 +6,6 @@ public class Asus extends Computer {
 	
 	// parametresiz constructor
 	public Asus() {
-		super();
 	}
 	
 	// parametreli constructor
