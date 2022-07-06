@@ -14,6 +14,13 @@ public class Asus extends Computer {
 		this.voiceRecognation = voiceRecognation;
 	}
 	
+	// super classtan gelen özelliði override etmek
+	@Override
+	public void commonMethod() {
+		super.commonMethod();
+		System.out.println("Asus ");
+	}
+	
 	@Override
 	public String toString() {
 		return "Asus [voiceRecognation=" + voiceRecognation + "]";

@@ -12,6 +12,13 @@ public class Msi extends Computer {
 		super(cpu, ram, smartMainBoard, port);
 	}
 	
+	// super classtan gelen özelliði override etmek
+	@Override
+	public void commonMethod() {
+		super.commonMethod();
+		System.out.println("Msi ");
+	}
+	
 	// toString()
 	@Override
 	public String toString() {

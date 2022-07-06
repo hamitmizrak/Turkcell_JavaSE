@@ -38,16 +38,21 @@ public class Computer {
 	
 	// parametresiz constructor
 	public Computer(String cpu, String ram, String smartMainBoard, String port) {
-		super();
 		this.cpu = cpu;
 		this.ram = ram;
 		this.smartMainBoard = smartMainBoard;
+		this.port = port;
 	}
 	
 	// toString
 	@Override
 	public String toString() {
-		return "Asus [cpu=" + cpu + ", ram=" + ram + ", smartMainBoard=" + smartMainBoard + ", port=" + port + "]";
+		return "Computer [cpu=" + cpu + ", ram=" + ram + ", smartMainBoard=" + smartMainBoard + ", port=" + port + "]";
+	}
+	
+	// commonMethod
+	public void commonMethod() {
+		System.out.print("Computer Method: ");
 	}
 	
 	// getter Setter
