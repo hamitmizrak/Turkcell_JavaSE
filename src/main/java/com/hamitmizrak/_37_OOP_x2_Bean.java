@@ -1,9 +1,14 @@
 package com.hamitmizrak;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 // BEAN= POJO: Plain Old Java Object +constructor+seriable+toString
-public class _37_OOP_x2_Bean {
+public class _37_OOP_x2_Bean implements Serializable {
+	
+	// seriazable: Java'ya burada diyoruz ki bütün iþleri sana veriyoruz.
+	// sen kendi serialVersionUID oluþtur
+	private static final long serialVersionUID = 1L;
 	
 	// Javada bütün classlarýn atasý Object
 	
