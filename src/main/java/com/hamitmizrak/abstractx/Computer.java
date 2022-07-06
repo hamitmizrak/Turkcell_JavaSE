@@ -1,11 +1,11 @@
-package com.hamitmizrak.inheritance;
+package com.hamitmizrak.abstractx;
 
 // kalýtýmda:
 // Kalýtým(Miras)
 // Üst atadan aldýðýmýz özelliklere biz kalýtým diyoruz.
 // Sýnýflarýn birbirinden türemesine denir.
 
-// Kalýtým:
+// abstract:
 // Java single inheritance'dir.
 // Kod tekrarýný önlemek
 // temiz kod yazmamýza olanak saðlar.
@@ -14,17 +14,12 @@ package com.hamitmizrak.inheritance;
 // Class yönetimini rahatlatýr
 // Maliyetleri azaltýr. (bakým)
 
-// SuperClass
-// Bir sýnýf baþka bir sýnýftan türüyorsa üst ata yani parent özelliklere
-// superClass
-// super.nesneDeðiþkeni==> deðiþkenler
-// super.metotEriþim => MEtot
-// super() ==> Constructor
-//
+// abstract
+// new ile yazamayýz
+// gövdeli - gövdesiz metot oluþturulmaz
+// polymorphism yazabiliriz.
 
-// SubClass
-// Bir sýnýf baþka bir sýnýftan türüyorsa alt yani chield classlara subClass
-public class Computer {
+abstract public class Computer {
 	
 	// Genel ortak özellikler
 	protected String cpu;
@@ -50,10 +45,13 @@ public class Computer {
 		return "Computer [cpu=" + cpu + ", ram=" + ram + ", smartMainBoard=" + smartMainBoard + ", port=" + port + "]";
 	}
 	
-	// commonMethod
-	public void commonMethod() {
+	// govdeliMethod: gövdeli metot yani curl {}
+	public void govdeliMethod() {
 		System.out.print("Computer Method: ");
 	}
+	
+	// govdesizMethod: gövdeli metot yani curl {}
+	abstract public void govdesizMethod(String name);
 	
 	// getter Setter
 	public String getCpu() {
