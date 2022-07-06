@@ -8,6 +8,10 @@ public class InheritanceMainTest {
 		Computer computer = new Computer("computer-cpu", "computer-ram", "computer-anakart", "computer-port");
 		System.out.println(computer);
 		
+		System.out.println("\n******** Ana Class (Super Class) ***********************");
+		Computer computer2 = new Msi("computer-cpu", "computer-ram", "computer-anakart", "computer-port");
+		System.out.println(computer2);
+		
 		// Asus
 		System.out.println("\n******** Asus Class (Sub Class) ***********************");
 		Asus asus = new Asus("asus-cpu", "asus-ram", "asus-smartMainBoard", "asus-port", "asus-voiceRecognation");
