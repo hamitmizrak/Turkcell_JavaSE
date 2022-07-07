@@ -7,6 +7,10 @@ package com.hamitmizrak.lambdaexpression;
 // sade kodlarla iþlem yaparýz.
 // Lambda tek baþýna anlamsýzdýr.
 
+// Lambda expressions, iþlevsel programlamayý kolaylaþtýrýr ve geliþtirmeyi çok
+// basitleþtirir. Koleksiyondan verilerin yinelenmesine, filtrelenmesine ve
+// çýkarýlmasýna yardýmcý olur.
+
 // Lambda Arkasýnda Güç :JVM arkadaki lambdalarý birer interface çevirir.
 
 // Lambda Function
@@ -44,11 +48,9 @@ public class LambdaExpression {
 	public static void main(String[] args) {
 		// Normal Interface
 		ILambdaExpressionData expressionData = new ILambdaExpressionData() {
-			
 			@Override
 			public void deneme(String adi) {
 				System.out.println(adi + "normal interface yapýsý");
-				
 			}
 		};
 		expressionData.deneme("argüman verdim ");
