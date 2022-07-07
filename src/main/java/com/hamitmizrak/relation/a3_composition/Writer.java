@@ -1,7 +1,12 @@
 package com.hamitmizrak.relation.a3_composition;
 
+import java.io.Serializable;
+import java.util.List;
+
 // 1
-public class Writer {
+public class Writer implements Serializable {
+	// serileþtirme
+	private static final long serialVersionUID = 1L;
 	
 	// nesne deðiþkeni
 	private String writerName;
@@ -15,6 +20,15 @@ public class Writer {
 		this.writerName = writerName;
 	}
 	
+	// toString
+	@Override
+	public String toString() {
+		return "Writer [writerName=" + writerName + "]";
+	}
+	
+	// empati kurmak
+	List<Book> bookList;
+	
 	// getter and setter
 	public String getWriterName() {
 		return writerName;
@@ -22,6 +36,15 @@ public class Writer {
 	
 	public void setWriterName(String writerName) {
 		this.writerName = writerName;
+	}
+	
+	// composition getter and setter
+	public List<Book> getBookList() {
+		return bookList;
+	}
+	
+	public void setBookList(List<Book> bookList) {
+		this.bookList = bookList;
 	}
 	
 }
