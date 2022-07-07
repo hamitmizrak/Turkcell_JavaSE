@@ -1,4 +1,4 @@
-package com.hamitmizrak.inheritance;
+package com.hamitmizrak.inheritancex;
 
 public class Asus extends Computer {
 	
@@ -14,7 +14,7 @@ public class Asus extends Computer {
 		this.voiceRecognation = voiceRecognation;
 	}
 	
-	// super classtan gelen özelliði override etmek
+	// super classtan gelen Ã¶zelliÃ°i override etmek
 	@Override
 	public void commonMethod() {
 		super.commonMethod();

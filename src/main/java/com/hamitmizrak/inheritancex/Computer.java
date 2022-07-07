@@ -1,32 +1,32 @@
-package com.hamitmizrak.inheritance;
+package com.hamitmizrak.inheritancex;
 
-// kalıtımda:
-// Kalıtım(Miras)
-// Üst atadan aldığımız özelliklere biz kalıtım diyoruz.
-// Sınıfların birbirinden türemesine denir.
+// kalÃ½tÃ½mda:
+// KalÃ½tÃ½m(Miras)
+// Ãœst atadan aldÃ½Ã°Ã½mÃ½z Ã¶zelliklere biz kalÃ½tÃ½m diyoruz.
+// SÃ½nÃ½flarÃ½n birbirinden tÃ¼remesine denir.
 
-// Kalıtım:
+// KalÃ½tÃ½m:
 // Java single inheritance'dir.
-// Kod tekrarını önlemek
-// temiz kod yazmamıza olanak sağlar.
-// büyük projelerde hızlıca yol almak
-// esnelik sağlar
-// Class yönetimini rahatlatır
-// Maliyetleri azaltır. (bakım)
+// Kod tekrarÃ½nÃ½ Ã¶nlemek
+// temiz kod yazmamÃ½za olanak saÃ°lar.
+// bÃ¼yÃ¼k projelerde hÃ½zlÃ½ca yol almak
+// esnelik saÃ°lar
+// Class yÃ¶netimini rahatlatÃ½r
+// Maliyetleri azaltÃ½r. (bakÃ½m)
 
 // SuperClass
-// Bir sınıf başka bir sınıftan türüyorsa üst ata yani parent özelliklere
+// Bir sÃ½nÃ½f baÃ¾ka bir sÃ½nÃ½ftan tÃ¼rÃ¼yorsa Ã¼st ata yani parent Ã¶zelliklere
 // superClass
-// super.nesneDeğişkeni==> değişkenler
-// super.metotErişim => MEtot
+// super.nesneDeÃ°iÃ¾keni==> deÃ°iÃ¾kenler
+// super.metotEriÃ¾im => MEtot
 // super() ==> Constructor
 //
 
 // SubClass
-// Bir sınıf başka bir sınıftan türüyorsa alt yani chield classlara subClass
+// Bir sÃ½nÃ½f baÃ¾ka bir sÃ½nÃ½ftan tÃ¼rÃ¼yorsa alt yani chield classlara subClass
 public class Computer {
 	
-	// Genel ortak özellikler
+	// Genel ortak Ã¶zellikler
 	protected String cpu;
 	protected String ram;
 	protected String smartMainBoard;

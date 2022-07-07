@@ -1,4 +1,4 @@
-package com.hamitmizrak.inheritance;
+package com.hamitmizrak.inheritancex;
 
 public class Msi extends Computer {
 	
@@ -12,7 +12,7 @@ public class Msi extends Computer {
 		super(cpu, ram, smartMainBoard, port);
 	}
 	
-	// super classtan gelen özelliði override etmek
+	// super classtan gelen Ã¶zelliÃ°i override etmek
 	@Override
 	public void commonMethod() {
 		super.commonMethod();

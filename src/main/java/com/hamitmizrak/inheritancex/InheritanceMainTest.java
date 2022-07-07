@@ -1,4 +1,4 @@
-package com.hamitmizrak.inheritance;
+package com.hamitmizrak.inheritancex;
 
 public class InheritanceMainTest {
 	
@@ -27,8 +27,8 @@ public class InheritanceMainTest {
 		msi.commonMethod();// Polymorphism:
 		System.out.println(msi);
 		
-		// String result = (asus instanceof Asus) ? "Evet asus Asus'tan türemiş" :
-		// "Hayır asus Asus'tan türemiş";
+		// String result = (asus instanceof Asus) ? "Evet asus Asus'tan tÃ¼remiÃ¾" :
+		// "HayÃ½r asus Asus'tan tÃ¼remiÃ¾";
 		// System.out.println(result);
 		
 	}
