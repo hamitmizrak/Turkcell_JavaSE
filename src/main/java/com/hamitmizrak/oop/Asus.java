@@ -1,6 +1,8 @@
 package com.hamitmizrak.oop;
 
-public class Asus extends Computer {
+import com.hamitmizrak.interfacex.IInterfaceTutorials;
+
+public class Asus extends Computer implements IInterfaceTutorials {
 	
 	private String voiceRecognation;
 	
@@ -30,6 +32,31 @@ public class Asus extends Computer {
 	public void govdesizMethod() {
 		System.out.println("asus gövdesiz");
 		
+	}
+	
+	// interface method
+	@Override
+	public void siteGit() {
+		System.out.println("Xyz eticaret");
+		
+	}
+	
+	@Override
+	public void sepetEkle() {
+		System.out.println("sepet ekledim eticaret");
+		
+	}
+	
+	@Override
+	public void ode() {
+		System.out.println("Ödedim");
+		
+	}
+	
+	@Override
+	public String al(int sayi) {
+		System.out.println("al: " + sayi);
+		return "tamamdir";
 	}
 	
 	// getter Setter
