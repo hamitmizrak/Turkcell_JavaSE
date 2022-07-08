@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-// forEach
+// Collect
 public class _1_Stream_API04_collect {
 	
 	public static void streamTuto1() {
