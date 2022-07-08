@@ -11,11 +11,9 @@ public class _1_Stream_API4_collect {
 		
 		List<String> listem = Arrays.asList("malatya", "istanbul", "ankara", "malatya", "bursa", "bolu");
 		
-		
-		//Collectors.toList() ==> stream objesini Listeye Çevir
-		List<String> listem2=	listem.stream().collect(Collectors.toList());
+		// collect(Collectors.toList()) ==> stream objesini Listeye Çevir
+		List<String> listem2 = listem.stream().collect(Collectors.toList());
 		listem2.forEach(System.out::println);
-		
 		
 	}
 	

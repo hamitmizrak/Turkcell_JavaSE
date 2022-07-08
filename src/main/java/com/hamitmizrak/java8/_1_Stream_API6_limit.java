@@ -11,8 +11,9 @@ public class _1_Stream_API6_limit {
 		
 		List<String> listem = Arrays.asList("malatya", "istanbul", "ankara", "malatya", "bursa", "bolu");
 		
-		// sýradýktan sonra ilk 3 tane veriyi bana list olarak dönder ==> limit()
-		List<String> listem2 = listem.stream().sorted().limit(3).collect(Collectors.toList());
+		// limit() ==> sýradýktan sonra ilk 3 tane veriyi bana list olarak dönder ==>
+		// limit()
+		List<String> listem2 = listem.stream().sorted().limit(10).collect(Collectors.toList());
 		listem2.forEach(System.out::println);
 		
 	}

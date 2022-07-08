@@ -1,6 +1,7 @@
 package com.hamitmizrak.java8;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -11,8 +12,11 @@ public class _1_Stream_API5_Sorted {
 		
 		List<String> listem = Arrays.asList("malatya", "istanbul", "ankara", "malatya", "bursa", "bolu");
 		
-		// Collectors.toList() ==> stream objesini Listeye Çevir
-		List<String> listem2 = listem.stream().sorted().collect(Collectors.toList());
+		// Sorted() ==> Küçükten büyüðe sýralama
+		// List<String> listem2 = listem.stream().sorted().collect(Collectors.toList());
+		
+		// reverse() ==> Büyükten küçüðe sýralama
+		List<String> listem2 = listem.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
 		listem2.forEach(System.out::println);
 		
 	}
