@@ -1,7 +1,6 @@
 package com.hamitmizrak.java8;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -13,11 +12,18 @@ public class _1_Stream_API7_Filter {
 		List<String> listem = Arrays.asList("malatya", "istanbul", "ankara", "malatya", "bursa", "bolu");
 		
 		// filter() ==> Var olan lsiteden benim istediklerimi sadece getir.
+		// filter veriler üzerinde bir deðiþklik yapmýyor.
+		// map ==> lambda expression (lambda function kullanýyoruz)
 		
 		// listedeki malatya geçenleri bana listele
 		// List<String> listem2 = listem.stream()// baþlanýç
 		// .filter((temp) -> "malatya".equals(temp)).collect(Collectors.toList());//
 		// stream'i listeye cevir
+		// listem2.forEach(System.out::println);
+		
+		List<String> listem2 = listem.stream()// baþlanýç
+				.filter((temp) -> "malatya".equals(temp)).collect(Collectors.toList());//
+		
 		// listem2.forEach(System.out::println);
 		
 		// listedeki malatya geçmeyenleriiiiii bana listele
@@ -48,10 +54,11 @@ public class _1_Stream_API7_Filter {
 		
 		// listedeki malatya geçmeyenleriiiiii büyükten küçüðe ilk 2 elemaný büyük
 		// harflerle listele
-		List<String> listem2 = listem.stream()// baþlanýç
-				.filter((temp) -> !"malatya".equals(temp.toLowerCase())) // filter
-				.sorted(Comparator.reverseOrder()).limit(2).collect(Collectors.toList());// stream'i listeye cevir
-		listem2.forEach(System.out::println);
+		// List<String> listem2 = listem.stream()// baþlanýç
+		// .filter((temp) -> !"malatya".equals(temp.toLowerCase())) // filter
+		// .sorted(Comparator.reverseOrder()).limit(2).collect(Collectors.toList());//
+		// stream'i listeye cevir
+		// listem2.forEach(System.out::println);
 		
 	}
 	
