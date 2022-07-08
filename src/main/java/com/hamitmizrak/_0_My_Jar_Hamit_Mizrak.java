@@ -1,5 +1,8 @@
 package com.hamitmizrak;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class _0_My_Jar_Hamit_Mizrak {
@@ -73,9 +76,74 @@ public class _0_My_Jar_Hamit_Mizrak {
 		return false;
 	}
 	
-	// faktoriyel
+	// vki (kilo/boy)*boy
+	public static String vki(double kilo, double boy) {
+		double result = (kilo / boy) * boy;
+		System.out.println(result);
+		return null;
+	}
 	
-	// asal sayi
+	// degreeToFahrenhayt degree*9/5+32
+	public static double degreeToFahrenhayt(double degree) {
+		return (degree * 9) / 5 + 32;
+	}
+	
+	// isOddEvenNumber
+	public static boolean isOddEvenNumber(int number) {
+		if (number % 2 == 0)
+			return true;
+		else
+			return false;
+	}
+	
+	// devam etmek için bir tuþ basýnýz
+	public static void continuesScanner() {
+		System.out.println("Devam etmek için bir Tuþa basýnýz");
+		klavye.nextLine();
+	}
+	
+	// nowDateString
+	public static String nowDateString() {
+		Locale locale = new Locale("tr", "TR");
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MMMM/yyyy HH:mm:ss", locale);
+		Date date = new Date();
+		return simpleDateFormat.format(date);
+	}
+	
+	// isNegativePositive
+	public static boolean isNegativePositive(int number) {
+		if (number < 0)
+			return false;
+		return true;
+	}
+	
+	// asal sayi asal degildir ==> 6/6 6/1 6/2 6/3
+	// en küçük ve tek çift sayý 2'dir
+	public static boolean isPrime(int number) {
+		boolean result = false;
+		if (number < 0)
+			System.out.println("Sýfýrdan Küçük Sayý veremezsiniz");
+		else if (number == 2)
+			System.out.println("en küçük ve tek çift sayý 2 Asal sayý");
+		else {
+			// 2 3 5 7 11 13 17 19
+			// asal sayý : 1 ve kendisine bölünenler asaldýr
+			for (int i = 2; i < number; i++) {
+				// sayý 2'e bölünüyorsa asal sayý deðildir
+				// eðer sayý döngüdeki bir sayýya bölünüyorsa asal sayý deðildir
+				if (number % i == 0)
+					result = true;
+			}
+			if (result) {
+				System.out.println("Asal sayý deðildir");
+			} else {
+				System.out.println(number + " sayýsý Asal sayýdýr");
+			}
+		}
+		return false;
+	}
+	
+	// startDownUpDiagonal (Dizi)
 	
 	// decoder encoder
 	
@@ -83,7 +151,7 @@ public class _0_My_Jar_Hamit_Mizrak {
 	
 	// Mükemmel sayi
 	
-	// deðiþken kullanmadan 2 sayýyýy deðiþtirmek
+	// deðiþken kullanmadan 2 sayýyý deðiþtirmek
 	
 	// isLetter isDigit
 	
@@ -99,7 +167,9 @@ public class _0_My_Jar_Hamit_Mizrak {
 	public static void main(String[] args) {
 		// stringReverse();
 		// isPalindrom();
-		isFactoriyel();
+		// isFactoriyel();
+		System.out.println("deneme");
+		isPrime(15);
 	}
 	
 }
