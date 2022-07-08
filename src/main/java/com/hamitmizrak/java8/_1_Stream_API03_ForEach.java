@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 // forEach
-public class _1_Stream_API3_ForEach {
+public class _1_Stream_API03_ForEach {
 	
 	public static void streamTuto1() {
 		

@@ -5,18 +5,15 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 // forEach
-public class _1_Stream_API8_Distinct {
+public class _1_Stream_API06_limit {
 	
 	public static void streamTuto1() {
 		
 		List<String> listem = Arrays.asList("malatya", "istanbul", "ankara", "malatya", "bursa", "bolu");
 		
-		// distinct() ==> Var olan listedeki tekrar eden verileri yazdýrmayan liste
-		
-		// listedeki malatya geçenleri bana listele
-		List<String> listem2 = listem.stream()// baþlanýç
-				.distinct().sorted().collect(Collectors.toList());
-		
+		// limit() ==> sýradýktan sonra ilk 3 tane veriyi bana list olarak dönder ==>
+		// limit()
+		List<String> listem2 = listem.stream().sorted().limit(10).collect(Collectors.toList());
 		listem2.forEach(System.out::println);
 		
 	}

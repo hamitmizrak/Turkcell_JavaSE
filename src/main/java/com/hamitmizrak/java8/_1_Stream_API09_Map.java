@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 // forEach
-public class _1_Stream_API9_Map {
+public class _1_Stream_API09_Map {
 	
 	public static void streamTuto1() {
 		
