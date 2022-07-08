@@ -8,18 +8,23 @@ import java.util.Scanner;
 public class _0_My_Jar_Hamit_Mizrak {
 	private static Scanner klavye = new Scanner(System.in);
 	
-	// user scanner data
-	public static String userScanner() {
-		System.out.println("+++++++++++\nbir seyler giriniz");
-		String value = klavye.nextLine();
-		return value;
+	// userString
+	public static String userString(String value) {
+		System.out.println("+++++++++++\n" + value + " giriniz");
+		return klavye.nextLine();
+	}
+	
+	// userNumber
+	public static int userNumber(String value) {
+		System.out.println("+++++++++++\n" + value + " giriniz");
+		return klavye.nextInt();
 	}
 	
 	// String ters yazmak (StringReverse) ==>Girilen kelimeyi ters yazdýran
 	public static String stringReverse() {
 		String temp = ""; // nullPointerException
 		try {
-			String data = userScanner();
+			String data = userString("bir kelime giriniz");
 			for (int i = data.length() - 1; i >= 0; i--) {
 				temp = temp + data.charAt(i);
 			}
@@ -36,7 +41,7 @@ public class _0_My_Jar_Hamit_Mizrak {
 	// Girilen bir kelimenin tersten okunuþu ve düzden okunuþu ayný ise
 	public static boolean isPalindrom() {
 		try {
-			String orijinalData = userScanner();
+			String orijinalData = userString("palindrom için bir kelime giriniz");
 			String changeData = "";
 			for (int i = orijinalData.length() - 1; i >= 0; i--) {
 				changeData += orijinalData.charAt(i);
@@ -56,7 +61,7 @@ public class _0_My_Jar_Hamit_Mizrak {
 	// faktöriyel
 	public static boolean isFactoriyel() {
 		try {
-			int number = Integer.valueOf(userScanner());
+			int number = Integer.valueOf(userString("faktöriyel için bir sayý giriniz"));
 			long factoriyelNumber = 1; // çarpmadan etkisiz eleman 1
 			
 			if (number < 0)
@@ -143,7 +148,34 @@ public class _0_My_Jar_Hamit_Mizrak {
 		return false;
 	}
 	
-	// startDownUpDiagonal (Dizi)
+	// starDownUpDiagonal (Dizi)
+	public static void starDownUpDiagonal() {
+		int matrixNumber = userNumber("matrix için bir sayý giriniz");
+		String[][] matrix = new String[matrixNumber][matrixNumber];
+		
+		String diagonalSymbol = "0", upSymbol = "1", downSymbol = "2";
+		
+		diagonalSymbol = userString("diagonal için simge giriniz ");
+		klavye.hasNext();
+		
+		upSymbol = userString("diagonal diagonal üstü için simge giriniz");
+		klavye.hasNext();
+		
+		downSymbol = userString("diagonal diagonal altý için simge giriniz");
+		klavye.hasNext();
+		
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
+				if (i < j)
+					System.out.print(upSymbol + " ");
+				else if (i > j)
+					System.out.print(downSymbol + " ");
+				else if (i == j)
+					System.out.print(diagonalSymbol + " ");
+			}
+			System.out.println();
+		}
+	}
 	
 	// decoder encoder
 	
@@ -154,6 +186,10 @@ public class _0_My_Jar_Hamit_Mizrak {
 	// deðiþken kullanmadan 2 sayýyý deðiþtirmek
 	
 	// isLetter isDigit
+	
+	// ISBN()
+	
+	// identityNumber()
 	
 	// Random UUID
 	
@@ -168,8 +204,9 @@ public class _0_My_Jar_Hamit_Mizrak {
 		// stringReverse();
 		// isPalindrom();
 		// isFactoriyel();
-		System.out.println("deneme");
-		isPrime(15);
+		// System.out.println("deneme");
+		// isPrime(15);
+		starDownUpDiagonal();
 	}
 	
 }
