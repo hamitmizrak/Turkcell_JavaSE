@@ -15,7 +15,7 @@ import java.util.function.Predicate;
 // Stream: 2 grup çalýþma sitili vardýr.
 // 1-) Sequential (Senkron: sadece 1 iþlem yapar)
 // 2-) Paralel (Asenkron:Ayný anda birden fazla iþlem yapabilir.)
-public class _1_Stream_API {
+public class _1_Stream_API_Description {
 	
 	// Dizi ile ==> 2 ile bölünebilen sayýlarý toplayýn
 	public static void basicArrayExamples() {
@@ -51,5 +51,4 @@ public class _1_Stream_API {
 		basicArrayExamples();
 		basicStreamExamples();
 	}
-	
 }
