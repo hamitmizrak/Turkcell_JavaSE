@@ -1,0 +1,280 @@
+
+
+--	DDL (tablo -veritabaný)    		DML(row-column)  			DQL			DCL
+--	create							insert						select		Grand
+--	drop							update									Revoke
+--	truncate						delete									Deny
+--  rename
+--	alter
+
+-- select kolonAdi from tabloAdi where kolonAdi=''
+
+-- distinct: veri tekrarlarýný önler
+-- where: þart için 
+-- order by: Küçükten büyüðe veya büyükten küçüðe doðru 
+-- group by: gruplar halinde verileri kümeleyemeye yarar.
+-- having  : gruplamayla beraber kullanýlýr.
+-- and : VE
+-- or : VEYA
+-- not: deðil
+-- in: subQuery için kullanacaðýz.
+-- between: sayýlarda arasýndaki verileri almak için kullanacðýz.
+-- like: filtreleme, search iþlemlerinden kullanýyoruz.
+-- alias: as takma adý 
+-- limit: yazdýðýmýz sorguda istediðimiz kadar veri gelmesini saðlar.
+
+-- upper()
+-- lower()
+
+-- içiçe sorguyla biz join'in yaptýðýný yapabiliriz.
+-- ancak içiçe okunmasý daha kolay ancak yavaþ
+-- inner join: tablolardaki ortak alan
+-- left join: ortak alan ve sol taraf
+-- right join: ortak alan ve sað taraf
+
+-- aggregate: 
+-- avg (sutunlarýn ortalamasýný)
+-- sum (sutunlarýn toplamýný bulmak)
+-- min (sutunlarýn en küçük sayýyý bulmak)
+-- max (sutunlarýn en büyük sayýyý bulmak)
+-- count (sutunlarýn sayý adeti)
+
+
+-- data types
+-- 1byte:8 bit
+-- smallint(2 byte) < integer (4 byte) < bigint(8 byte)
+-- serial : auto increment ve PK olamasýný saðlar
+-- character varying:-  string ifadeler için kullanýyoruz.
+-- text: çok büyük veriler için kullanmak
+
+--------------------------------------------------
+
+-- aritmetik iþlemler
+select 4+4;
+select 4*4;
+select 4/4;
+select 4-1;
+
+--------------------------------------------------
+
+-- date
+--TIMESTAMP: YIL-AY-GÜN-SAAT-DAKÝKA-SANÝYE
+--DATE: YIL-AY-GÜN
+--YEAR
+--TÝME: SAAT-DAKÝKA -SANÝYE
+
+-- YIL-AY-GÜN
+select CURRENT_DATE;
+
+-- SAAT-DAKÝKA-SANÝYE
+select CURRENT_TIME;
+
+--YIL-AY-GÜN-SAAT-DAKÝKA-SANÝYE-MS
+SELECT CURRENT_TIMESTAMP;
+
+--LOCAL SAAT:DAKÝKA-SANÝYE-MS
+SELECT LOCALTIME;
+SELECT LOCALTIMESTAMP;
+
+-- YAÞ HESAPLAMASI
+select age('2022-01-01','2021-01-01')
+
+--------------------------------------------------
+
+--DDL
+--DATABASE
+CREATE DATABASE "Turkcell"
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    CONNECTION LIMIT = -1;
+
+
+--TABLE1
+CREATE TABLE IF NOT EXISTS public.student
+(
+    id serial NOT NULL,
+    name character varying(155),
+    surname character varying,
+    "number" integer,
+    PRIMARY KEY (id)
+);
+
+ALTER TABLE public.student
+    OWNER to postgres;
+	
+
+--TABLE2
+
+-- manuel Create table
+create table if not exists person(
+person_id  serial not null,
+person_name varchar(100) DEFAULT 'personel adýný yazmadýnýz',
+person_surname character varying(250) UNIQUE,
+person_informatin TEXT,
+person_number integer,
+person_hescode int,
+created_date TIMESTAMP WITH TIME ZONE DEFAULT 	CURRENT_TIMESTAMP,
+PRIMARY KEY(person_id)
+)
+
+
+create table if not exists school(
+school_id  serial not null,
+school_name character varying(250),
+person_id int references person(person_id) not null,
+created_date TIMESTAMP WITH TIME ZONE DEFAULT 	CURRENT_TIMESTAMP,
+PRIMARY KEY(school_id)
+)
+
+-- Constraints(Kýsýtlayýcýlar)
+-- PK
+-- FK
+-- UNIQUE
+-- DEFAULT
+-- CHECK
+
+
+select * from person;
+insert into person (person_surname) values ('Mýzrak2');
+delete from person where person_id=1;
+
+-- TABLE/DATABASE SÝL
+drop  table person;
+drop database Turkcell;
+
+-- TABLE TRUNCATE
+truncate table person restart identity;
+
+-- ALTER
+alter table person add column_name character varying;
+	
+--------------------------------------------------
+
+-- DDL Manuel
+
+
+--------------------------------------------------
+
+-- DQL
+select * from student;
+
+
+--------------------------------------------------
+--DML
+--insert
+insert into student (name, surname,number) values ('Hamit','Mýzrak',44);
+
+
+--delete
+--DELETE 0 : Silinmedi
+--DELETE 1 : 1 tane data sildi 
+delete from student ;
+delete from student where id=3;
+
+--update
+--UPDATE 0 : Güncellenmedi
+--UPDATE 1 : 1 tane data güncellendi 
+update student set name='isim deðiþti';
+update student set name='isim deðiþti44' where id=7;
+
+
+--------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+
+
+-- SELECT
+-- NOT: sorgularý northwind database sorgularý atacaðýz.
+-- NOT: String ifadelerde Tek týrnak kullanmalýyýz.
+-- NOT: as hep kullanmaya çalýþalým.
+
+--SYNTAX SIRALAMASI
+-- bil : between in like
+-- select + distinct + from(Tablo Adý) + where (Sutun Adý) +beetween sayý1 and_or sayý2 ,in(isim1,isim2), like + order by +  limit
+
+-- * : hepsi anlamýna gelir
+--S1-) bütün employees tablosundaki verileri getirelim ?
+select * from employees;
+
+--S2-) employees tablosundaki sýrasý first_name, last_name  verileri getirelim ?
+select employees.first_name , employees.last_name from employees;
+select first_name , last_name from employees;
+
+-- as: takma ad uzun kolon isimleri kýsaltmak için kullanýlýr
+--S3-) employees tablosundaki sýrasý first_name, last_name verileri getirelim (alias kullanalým ==> employees=emp olsun) (as) ?
+select emp.first_name , emp.last_name from employees as emp;
+
+-- where : þart saðlar
+--s4-) employees tablosundaki first_name Steven olan bütün kolonlarý getirelim ? (where)
+select * from employees where  first_name='Steven';
+select * from employees as emp where  emp.first_name='Steven';
+
+-- ünlem(!) deðil anlamýna gelir 
+--s5-) employees tablosundaki first_name sutunundaki Steven olmayan bütün kolonlarý getirelim ? (!=)
+select * from employees as emp where emp.first_name!='Steven';
+
+--distinct: tekrarlý veriler kaldýrýr
+--s6-) employees tablosundaki first_name sutunundaki Steven olan tekrarý kaldýralým ve first_name  getirelim ? (distinct)
+select distinct first_name  from employees;
+
+
+-- order by: Sýralama yapýyoruz
+-- asc: Küçükten  büyüðe (default)
+-- desc: Büyükten küçüðe
+--s7.1-) employees tablosundaki first_name sutunundaki küçükten büyüðe doðru sýralayalým  getirelim ? (order by,asc,desc)
+select emp.first_name from employees as emp order by emp.first_name;
+select emp.first_name from employees as emp order by emp.first_name asc;
+
+-- order by: Sýralama yapýyoruz
+-- asc: Küçükten  büyüðe (default)
+-- desc: Büyükten küçüðe
+--s7.2-) employees tablosundaki first_name sutunundaki Büyükten küçüðe büyüðe doðru sýralayalým  getirelim ? (order by,asc,desc)
+select emp.first_name from employees as emp order by emp.first_name desc;
+
+
+-- and: VE
+--s8-) employees tablosundaki first_name sutunundaki Steven olan ve city'si Malatya olan verileri getirelim ? ( where, and)
+select * from employees as emp where emp.first_name='Steven' and emp.city='Malatya';
+
+-- or: VEYA
+--s9-) employees tablosundaki first_name sutunundaki Steven olan veya city'si London olan verileri getirelim ? ( where, or)
+select * from employees as emp where emp.first_name='Steven' or emp.city='London';
+
+--limit 5: 5 tane datayý getirir.
+--s10-) employees tabalosundaki first_name sutunundaki küçükten büyüðe doðru olacak þekilde ilk 5 tane veriyi getirelim (order by,limit)
+select * from employees as emp order by emp.first_name asc limit 5;
+
+-----------------------------
+-- BIL: between in like  => select * from tabloAdi where sutunAdi , in , like ,between
+--like: search iþlemlerimizde veya filtreleme iþlemlerimizde 
+-- %: herþey olabilir 
+--s11.1-) employees tablosundaki first_name 'A' harfi ile baþlayan bütün datalarý getirelim ?  (like %)
+select * from employees as emp where emp.first_name like 'A%';
+
+--s11.2-) employees tablosundaki first_name sutunundaki 'n' harfi ile biten bütün datalarý getirelim ?  (like %) 
+select * from employees as emp where emp.first_name like '%n';
+
+--s11.3-) employees tablosundaki first_name sutunundaki içinde 'an'  geçen bütün datalarý getirelim ?  (like %%)
+select * from employees as emp where emp.first_name like '%an%'
+
+--s11.4-) employees tablosundaki first_name sutunundaki içinde ilk harfi 'S' son harfi 'n' ve 6 tane harfli   bütün datalarý getirelim ?  (like  _=underscore)
+select * from employees as emp where emp.first_name like 'S____n';
+
+
+--between 
+--s12-) employees tablosundaki extension sutununda '428' ile '465' arasýndaki verileri bütün datalarý getirelim ?  (between )
+select * from employees as emp where emp."extension" BETWEEN '428' AND '465';
+
+--in: subQuery ve sutundaki birden fazla aramak için kullanýyoruz.
+--in: ayný sutundaki birden fazla data getirmek için kullanýyoruz.
+--s13-) employees tablosundaki first_name sutunundaki Steven,Michael,Anne ismindeki bütün datalarý getirelim ?  (in)
+select * from employees as emp where emp.first_name in('Steven','Michael','Anne');
+
+
+
+
+
+
+
+
