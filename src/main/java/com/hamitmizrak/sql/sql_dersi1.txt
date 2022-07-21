@@ -915,6 +915,39 @@ union all
 select * from union2;
 ---------------------------------------------------------------------------------------
 --join:
+--Yazar(1) - Kitaplar(N)
+Banka(1) - Müþteriler(N)
+
+Yazar(1) Kitaplar(N)
+
+--YAZAR(1)
+create table if not exists yazar(
+   yazar_id serial not null,
+	yazar_adi character varying,
+	yazar_soyadi character varying,
+	created_date timestamp with time zone default current_timestamp,
+	PRIMARY KEY(yazar_id)
+)
+
+--KÝTAPLAR(N)
+create table if not exists kitaplar(
+   kitap_id serial not null,
+	kitap_adi character varying,
+	kitap_fiyat integer,
+	created_date timestamp with time zone default current_timestamp,
+	yazar_id int not null REFERENCES yazar(yazar_id),
+	PRIMARY KEY(kitap_id)
+)
+
+
+insert into yazar(yazar_adi,yazar_soyadi) values('Neþat Nuri','Gültekin');
+select * from yazar;
+
+insert into kitaplar(kitap_adi,kitap_fiyat,yazar_id) values('Çalýkuþu',85,1);
+insert into kitaplar(kitap_adi,kitap_fiyat,yazar_id) values('Yaprak Dökümü',90,1);
+select * from kitaplar;
+
+select * from yazar as y1 inner join kitaplar as k1 on y1.yazar_id=k1.yazar_id;
 
 ---------------------------------------------------------------------------------------
 
