@@ -851,8 +851,68 @@ $$;
  -- verilen yarýçapla daire hesaplayan fonskiyon ? (daire hesaplama PI*R*R)
 
 ---------------------------------------------------------------------------------------
---union:
+-- Yan yana tablolarý birleþtirmek
+select * from orders,region;
 
+--union:
+-- birden fazla tabloyu tek bir tabloada göstermeye denir.
+
+-- union þartlarý:
+-- attribure sayýsý ayný olmalýdýr.
+-- attribute türleri ayný olacak
+-- ancak kolon isimleri farklý olabilir.
+create table if not exists union1(
+    union_id  serial not null,
+	adi character varying,
+	soyadi character varying,
+	PRIMARY KEY(union_id)
+)
+
+--INSERT
+insert into union1 (adi,soyadi) values('1','X');
+insert into union1 (adi,soyadi) values('1','Y');
+insert into union1 (adi,soyadi) values('1','X');
+
+--SELECT
+select * from union1;
+
+--DROP
+drop table union1;
+
+
+--
+create table if not exists union2(
+    union_id  serial not null,
+	adi character varying,
+	soyadi character varying,
+	PRIMARY KEY(union_id)
+)
+
+--INSERT
+insert into union2 (adi,soyadi) values('1','X');
+insert into union2 (adi,soyadi) values('1','Y');
+insert into union2 (adi,soyadi) values('1','X');
+
+--SELECT
+select * from union2;
+
+--DROP
+drop table union2;
+
+
+--
+select * from union1,union2;
+
+-- union: tekrar eden veriler göstermez yani tekrarlamaz
+select * from union1
+union
+select * from union2;
+
+
+-- union all: hepsini gösterir(tekrar veya tekrarsýz)
+select * from union1
+union all
+select * from union2;
 ---------------------------------------------------------------------------------------
 --join:
 
