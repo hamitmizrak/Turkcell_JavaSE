@@ -630,7 +630,7 @@ update student set student_name='silinecek' where student.student_id=(select max
 delete from student where student.student_id in (select max(student_id) from student);
 
 -- final notu yüksek olan sorguda final notunu ve vize notunu 10 puan düþürelim ?
-
+update student set vize_notes=vize_notes-10 , final_notes=final_notes-10 where student.final_notes=(select max(student.final_notes) from student)
 
 
 ---------------------------------------------------------------------------------------
@@ -773,7 +773,7 @@ select emp.region  from employees emp;
 --view
 --union:
 --join:
---function: 
+--function:
 --group by:
 --having:
 --transaction:
