@@ -1,3 +1,187 @@
+/* 
+
+--SYNTAX SIRALAMASI
+-- bil : between in like
+-- select+ (Aggreagate ,String,distinct) from(Tablo Adý) + where (Sutun Adý)+is null +beetween sayý1 and_or sayý2 ,in(isim1,isim2), like + order by +  limit
+
+*/
+
+
+-- single comment
+/* multiple comment*/
+
+
+-- comment out/in
+DB Management
+--------------------------------------
+Ýliþkisel Veri Tabanlarý
+1-Mysql
+2-Postgresql
+3-H2-Db
+4-Mssql
+5-MariaDb
+6-Sybase
+
+Client: istemci 
+Server: isteði yerine getiren
+
+Data(Veri): iþlenmemiþ bilgilere denir.
+
+
+Veri: iþlenmemiþ bilgiler demektir.
+Veri Tabaný:mantýksal ve fiziksel veri kümelerine denir.
+Veri Tabaný Yönetim Sistemi: verileri saklamak, güvenliðini saðlamak, tekrarsýz veriler oluþturmak,yedeðini almak
+
+
+Veri Tabaný
+-------------------------------------
+Düzenli veriler topluluðudur.
+Gereksiz verileri barýndýrmaz.
+Bellek kullanýmý düzenlidir.
+
+
+
+Ýyi Bir Veritabaný nasýl olmalýdýr ?
+--------------------------------------
+Güvenilir olmalýdýr.
+Güvenli bir þekilde verilerimiz saklayabilmeliyiz.
+Tekrarsýz veriler olmamasý gerekir.
+
+
+veri Tabaný Türleri
+--------------------------------------
+1-Hiyerarþk Veri tabaný
+2-Ýliþkisel Veri Tabanlarý
+3-Ýliþkisel Olmayan Veri Tabanlarý
+4-Nesnesel Veri tabanlarý
+
+Ýliþkisel Veri Tabanlarý
+--------------------------------------
+satýr(row) sutun(colomn)
+Verileri tablolardan tutulur.
+Normalization (verileri daha düzgün muhafaza etmek)
+Sql Manipulation
+Dikey Ölçekleme
+
+RDBMS - VTYS(Veri Tabaný Yönetim Sistemi)=> Mysql,Postgresql,Mssql
+--------------------------------------
+Veriyi muhafaza etmek
+Veri Bütünlüðünü korumak
+DDL
+DML
+
+
+VTYS(Veri Tabaný Yönetim Sistemi)
+--------------------------------------
+Veri tabaný kavramý 1980 yýllarda ortaya çýkýyor.
+Veriler saklamak,güncellemek,yönetmek,güvenliði saðlamak
+Veriler bütünlüðünü korumak
+Veri tekrarýnda uzak durmak
+
+SQL:
+--------------------------------------
+Sql standartýmýz 1983 IBM labaraturlarýnda standartlarý belirliyorlar.
+1987 ANSI SQL standartlaþtýrmýþlardýr.
+SQL Oracle,Sybase,Mysql,Mssql
+Sorgulama dilidir. Programlama dili deðildir.
+DBMS'ler bu SQL kullanarak üzerine yeni özellikler inþa eder.
+non-case-sensitive (Büyük küçük harfe duyarlý deðildir)
+Noktalý virgül yazalým.
+Bütün VTYS'lerde kullanýlýr.
+SEQUEL(Structed English QUery Language)
+SQL (Structed Query Language) => Yapýlandýrýlmýþ sorgulama dilidir.
+T-SQL: sql baðdaþtýrýlmýþ bir kelimeldir.
+
+SQL ALT GRUPLARI
+--------------------------------------
+1-) DCL (Data Control Language) : Veri Kontrol Dili =>Revoke,Grant,Deny
+2-) DDL (Data Definition Language)   => Create,Alter,Drop,Truncate,Rename,Comment
+3-) DML (Data Manipülation Language) => insert,update,delete,merge
+4-) DQL (Data Query Language)        => select
+
+SQL syntax
+--------------------------------------
+Tek  Týrnak (single quote): ''
+Çift Týrnak (double quote): ""
+backtick                  : ``
+
+----------------------------------------------------------------------------
+
+-- DDL (Data Definition Language)   => database-table => Create,Alter,Drop,Truncate,Rename,Comment
+-- DATABASE
+-- create
+create DATABASE  `deneme`;
+create DATABASE  deneme;
+create schema deneme default character set  utf8 collate utf8_turkish_ci;
+
+-- use
+use deneme;
+
+-- drop
+drop database_name deneme;
+drop table_name deneme;
+
+-- alter
+alter schema database_name default character set  utf8 collate utf8_turkish_ci;
+
+-- truncate
+truncate  table_name
+
+-------------------------------------
+-- TABLE
+
+-- common rules
+-- ;(noktalý virgül unutma)
+-- büyük harfle yazýlýr
+-- comment bol bol yazýn
+
+-- deðiþkenleri oluþtururken:
+-- hepsi küçük harf
+-- kelimeler ayrýþtýrýrken under_score kullanalým exam: student_name
+
+--  MYSQL
+CREATE TABLE person (
+`tc_kimlik_id` SMALLINT(5) NOT NULL AUTO_INCREMENT,
+`student_name` VARCHAR(150) NOT NULL,
+`student_surname` VARCHAR(255) NULL,
+`created_date` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY (`tc_kimlik_id`));
+
+-- Postgresql
+CREATE TABLE IF NOT EXISTS public.deneme
+(
+    id serial NOT NULL,
+    name character varying(155),
+    surname character varying(255),
+    PRIMARY KEY (id)
+    );
+ALTER TABLE public.deneme
+    OWNER to postgres;
+
+
+----------------------------------------------------
+-- Operators
+=
+<>  !=
+>
+>=
+<
+<=
+
+-- relation 
+AND :VE
+OR  :VEYA
+
+-- between like in subQuery join group by having as order by limit
+-- aggregate (min-max-count-avg-sum)
+-- string function (lower-upper-substring-length-replace-trim-concat)
+----------------------------------------------------
+-- select
+-- SELECT(SUTUNLAR) FROM(TABLO ADI)  WHERE(Conditional)
+-- çift týrnak yazma
+select * from employees ;
+select last_name from employees;
+select last_name from employees where last_name='King'
 
 
 --	DDL (tablo -veritabaný)    		DML(row-column)  			DQL			DCL
@@ -11,7 +195,7 @@
 
 -- distinct: veri tekrarlarýný önler
 -- where: þart için 
--- order by: Küçükten büyüðe veya büyükten küçüðe doðru 
+-- order by: asc: Küçükten büyüðe veya desc:büyükten küçüðe doðru 
 -- group by: gruplar halinde verileri kümeleyemeye yarar.
 -- having  : gruplamayla beraber kullanýlýr.
 -- and : VE
@@ -77,7 +261,7 @@ SELECT LOCALTIME;
 SELECT LOCALTIMESTAMP;
 
 -- YAÞ HESAPLAMASI
-select age('2022-01-01','2021-01-01')
+select age('2022-01-01','2021-01-01');
 
 --------------------------------------------------
 
@@ -149,7 +333,7 @@ truncate table person restart identity;
 -- ALTER
 alter table person add column_name character varying;
 	
---------------------------------------------------
+-------------------------------------------------------------------------------
 
 -- DDL Manuel
 
@@ -160,7 +344,7 @@ alter table person add column_name character varying;
 select * from student;
 
 
---------------------------------------------------
+-------------------------------------------------------------------------------
 --DML
 --insert
 insert into student (name, surname,number) values ('Hamit','Mýzrak',44);
@@ -179,45 +363,57 @@ update student set name='isim deðiþti';
 update student set name='isim deðiþti44' where id=7;
 
 
---------------------------------------------------
---------------------------------------------------
---------------------------------------------------
-
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 -- SELECT
 -- NOT: sorgularý northwind database sorgularý atacaðýz.
 -- NOT: String ifadelerde Tek týrnak kullanmalýyýz.
 -- NOT: as hep kullanmaya çalýþalým.
 
---SYNTAX SIRALAMASI
--- bil : between in like
--- select + distinct + from(Tablo Adý) + where (Sutun Adý) +beetween sayý1 and_or sayý2 ,in(isim1,isim2), like + order by +  limit
 
 -- * : hepsi anlamýna gelir
 --S1-) bütün employees tablosundaki verileri getirelim ?
 select * from employees;
 
+-- alt alta yazabiliriz
+select 
+* 
+from 
+employees;
+
 --S2-) employees tablosundaki sýrasý first_name, last_name  verileri getirelim ?
 select employees.first_name , employees.last_name from employees;
 select first_name , last_name from employees;
 
+---------------------------------------------------------------------------------------
+
 -- as: takma ad uzun kolon isimleri kýsaltmak için kullanýlýr
 --S3-) employees tablosundaki sýrasý first_name, last_name verileri getirelim (alias kullanalým ==> employees=emp olsun) (as) ?
 select emp.first_name , emp.last_name from employees as emp;
+
+---------------------------------------------------------------------------------------
 
 -- where : þart saðlar
 --s4-) employees tablosundaki first_name Steven olan bütün kolonlarý getirelim ? (where)
 select * from employees where  first_name='Steven';
 select * from employees as emp where  emp.first_name='Steven';
 
+---------------------------------------------------------------------------------------
+
 -- ünlem(!) deðil anlamýna gelir 
 --s5-) employees tablosundaki first_name sutunundaki Steven olmayan bütün kolonlarý getirelim ? (!=)
 select * from employees as emp where emp.first_name!='Steven';
+
+---------------------------------------------------------------------------------------
 
 --distinct: tekrarlý veriler kaldýrýr
 --s6-) employees tablosundaki first_name sutunundaki Steven olan tekrarý kaldýralým ve first_name  getirelim ? (distinct)
 select distinct first_name  from employees;
 
+
+---------------------------------------------------------------------------------------
 
 -- order by: Sýralama yapýyoruz
 -- asc: Küçükten  büyüðe (default)
@@ -233,6 +429,8 @@ select emp.first_name from employees as emp order by emp.first_name asc;
 select emp.first_name from employees as emp order by emp.first_name desc;
 
 
+---------------------------------------------------------------------------------------
+
 -- and: VE
 --s8-) employees tablosundaki first_name sutunundaki Steven olan ve city'si Malatya olan verileri getirelim ? ( where, and)
 select * from employees as emp where emp.first_name='Steven' and emp.city='Malatya';
@@ -241,12 +439,15 @@ select * from employees as emp where emp.first_name='Steven' and emp.city='Malat
 --s9-) employees tablosundaki first_name sutunundaki Steven olan veya city'si London olan verileri getirelim ? ( where, or)
 select * from employees as emp where emp.first_name='Steven' or emp.city='London';
 
+---------------------------------------------------------------------------------------
+
 --limit 5: 5 tane datayý getirir.
 --s10-) employees tabalosundaki first_name sutunundaki küçükten büyüðe doðru olacak þekilde ilk 5 tane veriyi getirelim (order by,limit)
 select * from employees as emp order by emp.first_name asc limit 5;
 
------------------------------
+---------------------------------------------------------------------------------------
 -- BIL: between in like  => select * from tabloAdi where sutunAdi , in , like ,between
+
 --like: search iþlemlerimizde veya filtreleme iþlemlerimizde 
 -- %: herþey olabilir 
 --s11.1-) employees tablosundaki first_name 'A' harfi ile baþlayan bütün datalarý getirelim ?  (like %)
@@ -255,26 +456,327 @@ select * from employees as emp where emp.first_name like 'A%';
 --s11.2-) employees tablosundaki first_name sutunundaki 'n' harfi ile biten bütün datalarý getirelim ?  (like %) 
 select * from employees as emp where emp.first_name like '%n';
 
---s11.3-) employees tablosundaki first_name sutunundaki içinde 'an'  geçen bütün datalarý getirelim ?  (like %%)
+--s11.3-) employees tablosundaki first_name sutunundaki 'N' ile baþlasýn ve 'y' harfi ile biten bütün datalarý getirelim ?  (like %) 
+select * from employees as emp where emp.first_name like 'N%y';
+
+--s11.4-) employees tablosundaki first_name sutunundaki içinde 'an'  geçen bütün datalarý getirelim ?  (like %%)
 select * from employees as emp where emp.first_name like '%an%'
 
---s11.4-) employees tablosundaki first_name sutunundaki içinde ilk harfi 'S' son harfi 'n' ve 6 tane harfli   bütün datalarý getirelim ?  (like  _=underscore)
+--s11.5-) employees tablosundaki first_name sutunundaki içinde ilk harfi 'S' son harfi 'n' ve 6 tane harfli   bütün datalarý getirelim ?  (like  _=underscore)
 select * from employees as emp where emp.first_name like 'S____n';
-
 
 --between 
 --s12-) employees tablosundaki extension sutununda '428' ile '465' arasýndaki verileri bütün datalarý getirelim ?  (between )
 select * from employees as emp where emp."extension" BETWEEN '428' AND '465';
-
---in: subQuery ve sutundaki birden fazla aramak için kullanýyoruz.
---in: ayný sutundaki birden fazla data getirmek için kullanýyoruz.
---s13-) employees tablosundaki first_name sutunundaki Steven,Michael,Anne ismindeki bütün datalarý getirelim ?  (in)
-select * from employees as emp where emp.first_name in('Steven','Michael','Anne');
+select * from employees as emp where emp."extension">='428' AND emp."extension"<='465';
 
 
+---------------------------------------------------------------------------------------
+
+-- cast türler arasýnda deðiþtirme iþlemlerinde kullanýyoruz.
+-- cast(degiþecek deðer as deðiþmesini istediðimiz Tür)
+-- cast('428' as integer)
+--s13-) employees tablosundaki extension sutununda '428' ile '465' öncelikle character varying olaný integer cast yapalým ve sonrasýnda
+-- arasýndaki verileri bütün datalarý getirelim ?  (between cast )
+select * from employees as emp where emp.extension BETWEEN '428' AND '465'
+select * from employees where cast(extension as integer) between 428 and 465;
+
+select cast ('5' as integer);
+select cast ('5' as INTEGER);
+select cast (5 as character varying);
+select cast (5 as char);
+select cast ('2022-07-20 9:49:52' as Date);
+select cast ('2022-07-20 9:49:52' as time);
+
+---------------------------------------------------------------------------------------
+
+-- is null : boþ olan datalar
+--s14-) employees tablosundaki region sutununda null olan deðerli listeleyelim (is null) ?
+select emp.region  from employees as emp where emp.region is null;
+
+-- is not null : boþ olmayanlarý datalar
+--s14-) employees tablosundaki region sutununda null olmayan deðerli listeleyelim (is not null) ?
+select emp.region  from employees as emp where emp.region is not null;
+
+--s15-) employees tablosundaki region sutununda null olan datalarý 'deðiþti' yazýsýný yazalým? (update, is null)
+select * from employees as emp where 
+
+update employees set region='deðiþti' where region is null
+select region  from employees
+select emp.region  from employees as emp where emp.region is not null;
+
+
+---------------------------------------------------------------------------------------
+-- MATH
+--Mutlak deðer
+select abs(-44);
+
+--Karekök
+select sqrt(16);
+
+--üslü sayýlar
+select pow(2,5);
+
+-- üste yuvarla
+select ceil(4.1);
+-- aþaðý yuvarla
+select floor(4.9);
+-- üst-aþaðý yuvarla
+select round(4.5);
+select round(4.4);
+
+--rastgele
+select random()*2+1;
+select round(random()*2+1);
+
+---------------------------------------------------------------------------------------
+-- aggreagate
+select* from employees  emp;
+
+--count: sayma , tane
+select count(*) from employees  emp;
+
+--en küçük sayý
+select min(emp.employee_id) from employees  emp;
+
+--en büyük sayý
+select max(emp.employee_id) from employees  emp;
+
+--toplamlarý
+select sum(emp.employee_id) from employees  emp;
+
+--ortalamasý
+select avg(emp.employee_id) from employees  emp;
+
+--s16-) employees tablosundaki birh_date sutununda kaç tane null vardýr ? (is null,count)?
+select count(*) from employees as emp WHERE emp.birth_date is null;
+select count(emp.employee_id) from employees as emp WHERE emp.birth_date is null;
+
+--s17-) employees tablosundaki birh_date sutununda kaç tane null olmayan vardýr  (is null,count) ?
+select count(*) from employees as emp WHERE emp.birth_date is not null;
+
+--s18-) employees tablosundaki employee_id en küçüðü alt taban , en büyüðü üst taban olacak þekilde üslü sayý  sorgusunu cevap ?  (pow(),min,max) ?
+select pow(2,5); 
+select pow( min(employee_id) ,max(employee_id)) from employees;
+
+
+---------------------------------------------------------------------------------------
+--STRING
+select emp.last_name from employees  emp;
+
+--lower() => Bütün karakterler küçük olacak
+select lower(emp.last_name) from employees emp;
+
+--upper() => Bütün karakterler büyük olacak
+select upper(emp.last_name) from employees emp;
+
+--substring() =>parçalamak 
+select substring(emp.last_name,1,3) as parcaladim from employees  emp;
+
+--replace() =>deðiþtirmek
+select replace(emp.last_name,'a','ARABA') as degistirdim from employees  emp;
+
+--sol boþluk al
+select ltrim(emp.last_name) as solBolukAldim from employees  emp;
+
+--sað boþluk al
+select rtrim(emp.last_name) as sagBoslukAl from employees  emp;
+
+--length: harf sayýsýný verir
+select length(emp.last_name) as sayi from employees  emp;
+
+--repeat: tekrar sayýsýný verir
+select repeat(emp.last_name,3) as sayi from employees  emp;
+
+--concat: sonuna eklemeye yarar
+select repeat ( concat(emp.last_name,' ') ,3) as sayi from employees  emp;
+
+
+---------------------------------------------------------------------------------------
+-- subQuery
+-- iç içe sorgulamak demektir. aslýnda javada öðrendiðimiz monad yapýsýdýr.
+-- yani bir query çýktýsý baþka bir örneðin girdisidir.
+
+--CREATE TABLE
+create table if not exists student(
+student_id serial PRIMARY KEY not null,
+student_name character varying(150),
+student_surname character varying,
+vize_notes integer,
+final_notes integer,
+created_date TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+)
+
+-- created_date TIMESTAMP  DEFAULT CURRENT_TIMESTAMP
+
+--DROP
+drop table student;
+
+--SELECT
+select * from student;
+
+--INSERT
+insert into student (student_name,student_surname,vize_notes,final_notes) values ('Hamit','Mýzrak',50,50);
+insert into student (student_name,student_surname,vize_notes,final_notes) values ('Hamit','Mýzrak',60,60);
+insert into student (student_name,student_surname,vize_notes,final_notes) values ('Hamit','Mýzrak',70,70);
+insert into student (student_name,student_surname,vize_notes,final_notes) values ('Hamit','Mýzrak',80,80);
+insert into student (student_name,student_surname,vize_notes,final_notes) values ('Hamit','Mýzrak',90,90);
+insert into student (student_name,student_surname,vize_notes,final_notes) values ('Hamit','Mýzrak',100,100);
+
+-- id en yüksek olaný dynamic biçimde sorguyla bulsun bunun student_name='silinecek' yazsýn
+update student set student_name='silinecek' where student.student_id=(select max(student_id) from student);
+
+-- id yüksek olaný bulsun ve silsin
+delete from student where student.student_id in (select max(student_id) from student);
+
+-- final notu yüksek olan sorguda final notunu ve vize notunu 10 puan düþürelim ?
 
 
 
+---------------------------------------------------------------------------------------
+--Soru
+northwind databaseine student diye bir tablo oluþturalým
+attributes: student_id,student_name(150) UNIQUE,student_surname(250),vizeNotes,finalNotes,current_time
+1-) 6 tane insert into
+2-) son kayýtta güncelleme yapalým student_name='silinecek' where id=max
+3-) son veriyi silelim (max)
+
+4-) student tablosunun verilerini listeleyelim. 
+select * from student;
+
+6-) student vize notlarý listeleyelim.
+select st.vize_notes from student as st;
+
+7-) student final notlarý listeleyelim.
+select st.final_notes from student as st;
 
 
+8-) student tablosundaki student_name columnsin sonu H harfi ile baþlasýn t ile bitenleri sorgulattýran liste.
+select student_name from student where student_name like 'H%t';
+
+
+9-) tudent tablosundaki vize_notunun %40  + final notunun %60 hesaplayan ve sonuc diye bir kolun oluþturalým.
+ aggregation
+ 
+select s1.vize_notes*0.4+s1.final_notes*0.6 as sonuc from student as s1;
+ 
+10-) çýkan sonuclarýndan en büyüðünü alias:enbuyuk bulalým.
+select max(s1.vize_notes*0.4+s1.final_notes*0.6) as sonuc from student as s1;
+
+11-) çýkan sonuclarýndan en küçüðü  alias:enKucuk bulalým.
+select min(s1.vize_notes*0.4+s1.final_notes*0.6) as sonuc from student as s1;
+
+
+12-) çýkan sonuclarýndan toplamlarý alias:toplam bulalým.
+select sum(s1.vize_notes*0.4+s1.final_notes*0.6) as sonuc from student as s1;
+
+
+13-) çýkan sonuclarýndan ortalamasý alias:ortalama bulalým.
+select avg(s1.vize_notes*0.4+s1.final_notes*0.6) as sonuc from student as s1;
+
+14-) çýkan sonuclarýndan toplam kaç adet vardýr alias:sayi bulalým.
+select count(s1.vize_notes*0.4+s1.final_notes*0.6) as sonuc from student as s1;
+
+
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+-- index ==> sürekli sorgularda biçilmiþ kaftan
+-- tablolarda bazen milyonlarca data olabilir. örneðin student tablosundaki student_name sorgusunu çok atýyorsam
+-- bu sorgu her defasýnda database yoracaktýr. bizde sürekli attýmýðýmýz sorgularý  index ile oluþturup datayý cache belleðine alýp
+-- performans saðlar.
+
+--CREATE TABLE
+create table if not exists student(
+student_id serial PRIMARY KEY not null,
+student_name character varying(150),
+student_surname character varying,
+vize_notes integer,
+final_notes integer,
+created_date TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+)
+
+-- created_date TIMESTAMP  DEFAULT CURRENT_TIMESTAMP
+
+--DROP
+drop table student;
+
+--SELECT
+select * from student;
+
+--INSERT
+insert into student (student_name,student_surname,vize_notes,final_notes) values ('Hamit','Mýzrak',50,50);
+insert into student (student_name,student_surname,vize_notes,final_notes) values ('Hamit','Mýzrak',60,60);
+insert into student (student_name,student_surname,vize_notes,final_notes) values ('Hamit','Mýzrak',70,70);
+insert into student (student_name,student_surname,vize_notes,final_notes) values ('Hamit','Mýzrak',80,80);
+insert into student (student_name,student_surname,vize_notes,final_notes) values ('Hamit','Mýzrak',90,90);
+insert into student (student_name,student_surname,vize_notes,final_notes) values ('Hamit','Mýzrak',100,100);
+
+
+--CREATE INDEX
+-- create index indexAdi ON tabloAdi(tabloAttribute)
+create index student_index_name on student(student_name);
+select s2.student_name from student as s2;
+
+
+---------------------------------------------------------------------------------------
+
+
+--view
+--union:
+--join:
+--function:
+--group by:
+--having:
+--transaction:
+--Trigger :
+--sp:
+
+
+---------------------------------------------------------------------------------------
+--CAST
+select cast ('5' as integer);
+
+--COALESCE:parametresi soldan baþlayarak saða doðru null olmayan ilk datayý döndürürür.
+select coalesce(null,null,null,4,5)
+select coalesce(null,6,null,4,5)
+select coalesce(9,6,null,4,5)
+
+--NULLIF: verilen iki parametre null olmayaný döndürür
+select NULLIF(null,null);
+select NULLIF(1,null);
+select NULLIF(null,1);
+select NULLIF(1,2);
+
+-- YAÞ HESAPLAMASI
+select age('2022-01-01','2021-01-01');
+
+--SLEEP
+-- sleep pg_sleep(saniye)
+select pg_sleep(5);
+select emp.region  from employees emp;
+
+-- sleep pg_sleep(saniye)
+select pg_sleep(10*60);
+select emp.region  from employees emp;
+
+ --ascii
+ select ASCII ('1');
+ 
+  -- sign: negatif pozitif mi ?  pozitif:+1 negatif:-1
+ select  sign(44); --pozitif :+
+ select  sign(-44);--negatif:-1
+
+---------------------------------------------------------------------------------------
+--ATM PROJECT
+--subQuery:
+--index:
+--view
+--union:
+--join:
+--function:
+--group by:
+--having:
+--transaction:
+--Trigger :
+--sp:
 
