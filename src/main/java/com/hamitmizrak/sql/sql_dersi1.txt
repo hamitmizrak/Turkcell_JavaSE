@@ -720,11 +720,144 @@ select s2.student_name from student as s2;
 
 ---------------------------------------------------------------------------------------
 
+-- view:
+-- database uzun uzun sürekli sorgularýmýz varsa bize yardýmcý olacak bileþen view'dir.
+-- CREATE VIEW takmaAd AS sorgu;
+create view surekliSorgulattigimSorgu
+AS
+select student_name from student where student_name like 'H%t';
 
---view
+--view çaðýrmasý
+select * from surekliSorgulattigimSorgu;
+
+--view silmek
+drop view surekliSorgulattigimSorgu;
+
+---------------------------------------------------------------------------------------
+
+-- transaction: ya hep ya hiç kuralýna göre yaþar 
+-- bizim bir datamýzýn bütün iþlemleri bittikten sonra iþlemler yapýlmasýný isteriz.
+select * from region;
+insert into region (region_id,region_description) values (8,'yeni data8')
+insert into region (region_id,region_description) values (9,'yeni data9')
+insert into region (region_id,region_description) values (10,'yeni data10')
+
+-- 3 tane verim olsun  ben bunlardan sadece 2 tanesini sileceðim.
+BEGIN;
+	delete from region where region.region_id=8;
+	delete from region where region.region_id=9;
+SAVEPOINT birinci;
+	delete from region where region.region_id=10;
+ROLLBACK TO birinci;
+COMMIT;
+
+select * from region;
+---------------------------------------------------------------------------------------
+
+-- function: bir takým problemleri kendi içinde çözebilen yapýya denir.
+-- function sürekli yazdýðýmýz sorgularý yazmamak için sorgu tekrarýný oluþturmamak için kullanýyoruz.
+-- Javada biz buna method diyoruz
+-- return döndürür.
+-- SP ile karýþtýrýlýr ancak unutulamalýdýr ki SP(Stored Procedure) return olmazzzzz
+-- function return var
+-- SP return yoktur.
+-- parametreli function ve/veya parametresiz function
+
+-- TEMPLATE
+create function fonksiyonAdi()
+returns veriTuru
+language plpgsql
+as
+$$
+ declare
+ begin
+  return
+ end;
+$$;
+
+
+
+--CREATE FUNCTION PARAMETRESÝZ
+ create function topla()
+ returns integer  --geri dönüþ deðeri
+ language plpgsql --dili 
+ as
+ $$
+	 declare --deðiþken oluþturmak
+		 sonuc integer;
+		 sayi1 integer=10;
+		 --sayi2 integer=20;
+		 sayi2 integer:=20;
+
+	 begin
+		 sonuc=sayi1+sayi2;
+		 return sonuc;
+	 end;
+ $$;
+ 
+ --FUNCTION ÇAÐIRMA
+ select topla() as toplam;
+ 
+ --DELETE FUNCTION
+ drop function if exists topla;
+ 
+ --------
+ --CREATE FUNCTION PARAMETRESÝZ
+ -- Girilen bir kelimenin ilk 3 harfini gösteren function yazýnýz ?
+ -- select SUBSTRING('Merhabalar',1,3);
+ 
+-- CREATE FUNCTION PARAMETRESÝZ
+ create function metinSub(kelime varchar(253))
+ returns varchar
+ language plpgsql
+ as
+ $$
+ declare 
+ temp_data varchar(253);
+ begin
+ temp_data=SUBSTRING(kelime,1,3);
+ return upper(temp_data);
+ end;
+ $$;
+ 
+ --SELECT
+ select metinSub('Ýstanbul');
+ 
+ --DROP
+  drop function if exists metinSub;
+  
+   -- Türkçe karakter olan üðþçöý ==> replace ==> ugscoi
+   create or replace function turkishToEnglish(valueData varchar(255))
+   returns varchar(255)
+   language plpgsql
+   as
+   $$
+   begin 
+   return translate(valueData,'üðþçöý','ugscoi');
+   end;
+   $$;
+   
+  --SELECT
+ select turkishToEnglish('çorum aðrý');
+ 
+ --DROP
+  drop function if exists turkishToEnglish;
+ 
+ 
+ -- girilen bir kelimeyi bütün harfleri büyük yapan fonksiyon ?
+ -- girilen bir kelimeyi küçük harfleri küçük yapan fonksiyon ?
+ -- dereceyi fahranhata ceviren fonskiyon ? F=C*1.8+32
+ -- girilen 3 sayýyý ortalamasý fonskiyon ?
+ -- verilen yarýçapla daire hesaplayan fonskiyon ? (daire hesaplama PI*R*R)
+
+---------------------------------------------------------------------------------------
 --union:
+
+---------------------------------------------------------------------------------------
 --join:
---function:
+
+---------------------------------------------------------------------------------------
+
 --group by:
 --having:
 --transaction:
@@ -733,6 +866,19 @@ select s2.student_name from student as s2;
 
 
 ---------------------------------------------------------------------------------------
+--Version
+select version();
+
+--databasedeki kullanýcýlarý listeler
+select usename from pg_user;
+
+--databse yeni bir kullanýcý eklemek
+create user hamit44;
+
+-- PID
+select * from pg_stat_activity;
+select * from pg_terminate_backend(1584)
+
 --CAST
 select cast ('5' as integer);
 
@@ -759,12 +905,12 @@ select emp.region  from employees emp;
 select pg_sleep(10*60);
 select emp.region  from employees emp;
 
- --ascii
- select ASCII ('1');
+--ascii
+select ASCII ('a');
  
-  -- sign: negatif pozitif mi ?  pozitif:+1 negatif:-1
- select  sign(44); --pozitif :+
- select  sign(-44);--negatif:-1
+-- sign: negatif pozitif mi ?  pozitif:+1 negatif:-1
+select  sign(44); --pozitif :+1 dönüyor
+select  sign(-44);--negatif :-1 dönüyor
 
 ---------------------------------------------------------------------------------------
 --ATM PROJECT
