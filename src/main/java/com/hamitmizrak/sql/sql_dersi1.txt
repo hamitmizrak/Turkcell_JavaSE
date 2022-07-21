@@ -773,7 +773,7 @@ select emp.region  from employees emp;
 --view
 --union:
 --join:
---function:
+--function: 
 --group by:
 --having:
 --transaction:
