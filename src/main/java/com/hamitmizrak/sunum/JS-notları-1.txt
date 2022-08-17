@@ -1,0 +1,71 @@
+Javascript Notları-1
+
+--> Javascript bir betik dilidir.
+--> ES + TS şeklinde iken dil denebilir.
+
+--> console.log("-") yazılan giriyi görüntüler.
+
+--> // single comment
+--> /* */ multiple line comment
+
+--> alert("-") girl pop-up şeklinde görüntülenir.
+
+--> window: çalışılan penceredir. 
+
+--> window >> HEPSİ
+--> document >> HTML
+
+--> var name = prompt("_");
+    console.log(name)   ---> kullanıcıdan veri almak isteniyorsa.
+
+--> var isim = "Hamit";
+    isim = "Hamit M"; ---- string
+    İsim = false; ---- boolean
+    İsim = 44; --- number
+
+--> var soyisim = "Mızrak";
+    Soyisim44 = "Mızrak";  ! Sayı ve özel simge ile başlanamaz.
+			    $ ve _ ile başlanabilir.
+
+--> camelCase kullanılmalıdır.
+
+--> undefined deniyorsa variable initialize edilmesi gerekiyordur.
+
+--> Logic operatörler: &&-VE 
+		      ||-YA DA
+    
+     Mathematical operatörler: + - / % *
+
+     Comparison operatörler: > < >= <= ! == ===
+			    = atama 
+			    == eşit mi (ancak türüne bakma) örn: "5" 5 TRUE
+			    === eşit mi (türüne bak) örn: "5" 5 FALSE
+
+     Postfix: x++ , ++x , y-- , y++
+
+* * * --> Binary Codes ( 0 1 )
+    Octal (8) -- (01234567)
+    Decimal (10) -- (0123456789)
+    Hexadecimal (16) -- (0123456789abcdef)
+    1 byte = 8 bit
+    1 bit = 0
+    Bit < byte < GB < TB
+
+
+--> typeof: variable türünü anlamak için kullanılır.
+
+--> CAST: dönüştürmek. --Number() --String()
+
+--> NaN: Not a Number(sayı değil).
+
+--> Infinity: Sayı sıfıra bölünmeye çalışıldığında olur.
+
+--> Null: Hafızayı boşaltmak(ölür).
+
+--> New: Ram hafızasında yer açmak.
+
+--> Sıfır: Bir değeri vardır ama sıfırdır.
+
+--> escape character: örn: console.log("\"") 
+			  console.log("'")
+		

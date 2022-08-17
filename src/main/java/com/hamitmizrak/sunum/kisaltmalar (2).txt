@@ -1,0 +1,13 @@
+### 20.06.2022 Monday ###
+ IDE: Integrated Development Environment
+ API: Application Programming Interface
+ JDK: Java Development Kit
+ JVM: Java Virtual Machine
+ JRE: Java Runtime Environment
+ JIT: Just in Time 
+ OOP: Object Oriented Programming
+ SOLID ==> S: SRP: Single Responsibility Principle 
+           O: OSP: Open Closed Principle
+           L: LSP: Liskov Substitution Principle
+           I: ISP: Interface Segregation Principle
+           D: DIP: Dependency Inversion Principle 

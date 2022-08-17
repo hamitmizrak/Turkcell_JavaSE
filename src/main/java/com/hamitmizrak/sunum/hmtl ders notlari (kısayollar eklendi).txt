@@ -1,0 +1,114 @@
+<!DOCTYPE html> -> html5 standartları
+
+browserler head tagları arasını tanır.
+
+meta charset -> karakter sorunlarını gidermemize yardımcı olur.
+
+<meta name='viewport' content='width=device-width, initial-scale=1'> -> responsive design
+
+<!-- ... --> yorum satırı
+
+<meta charset="UTF-8"> türkçe karakter
+
+<html lang="en"> dil
+
+xhtml -> html5 den önceki standartlaştırılmış yapılardır. daha katıdır. harflere duyarlı değil.
+
+​<meta name="author" content=“Sayfa yazarının bilgisi burada bulunmalıdır.”/>
+
+​<meta name="description" content=“Sayfanın tanımlaması burada bulunmalıdır.”/>
+
+<p> merhaba </p> -> paragraf
+
+<h1> -> 6 tane heading yapısı vardır. 
+
+<hr> cizgi 
+<b/> boşluk
+
+<span> o satırda devam eder 
+<div> alt satıra geçer
+
+html formatter
+<b> kalın yaz</b>
+<br/> alt satıra geçer
+<i> italic 
+<big>
+<small>
+<strong>
+<code> kod formatında gösterir</code>
+<sub>2</sub> karakteri alta indirir
+<sup>5</sup> karakteri üst ifade yapar
+<em> vurgulama yapar
+<mark> fosforlu kalemle çizilmiş gibi gösterir
+<del> üstü çizili gösterir
+<ins> metnin altını çizer
+
+
+listeler
+ul -> düzenli olmayan liste 
+ol -> düzenli listelerdir
+
+<ol start="1" type="A">
+
+<img src="../picture/resim1.jpg" alt="resimyok"> resimimizi gösterir
+
+<a href="">click me!</a> link işlemi (harici linklerde http eklenmesi gerekir.)
+target="_blank"  yeni sekmede açar
+
+<table>
+
+<th colspan> satırları birleştir
+
+iframe -> site içerisinde site için kullanılır
+
+link rel ="shortcut icon" href=""> favicon
+
+## Form
+<form action=""  method="post/get">
+autocomplete="on" otomatik tamamlama
+
+<input type="text" id="adi" name="adi" required />  -> type = input türü, id=bensersizdir. 
+--required = boş geçilemez.
+--placheholder="email giriniz" input içinde görünecek yazıdır.
+-autofocus = imlecin yanıp sönmesini sağlar
+
+<input type="submit" value="veri gönder> 
+
+##input türleri
+text 
+password - şifre kısmını olusturur
+submit - gönderir
+email - email formatında girilme zorunluluğu getirir
+radio - name kısımları aynı olmak zorunda. checked default olarak secilmesini istediğiniz kısma konulur
+reset - temizler
+checkbox
+
+
+select- option dropdown yapısı kurmak için kullanılır.
+value - backend'e gidecek kısımdır
+multiple - birden cok seçme işlemi için kullanılır.
+<select name="backend_data id ="id">
+
+Kısayollar
+
+1) YORUM SATIRI - CTRL+K+C
+2) KOPYA OLUŞTURMA - CTRL+D
+3) HİZALAMA - SHIFT+ALT+F
+
+
+
+
+Online editor Codepen  ==> https://codepen.io/pen/
+Online editor JsFiddle ==> https://jsfiddle.net/
+Online visual s code   ==> https://vscode.dev/
+Emmet                  ==> https://docs.emmet.io/cheat-sheet/
+html kaynak 	       ==> https://www.w3schools.com/html/
+
+
+
+ek kaynaklar:
+head  -> https://developers.google.com/search/docs/advanced/crawling/special-tags?hl=tr
+list  -> https://www.w3schools.com/html/html_lists.asp
+image -> https://www.javatpoint.com/html-image
+table -> https://www.tutorialspoint.com/html/html_tables.htm
+input türleri -> https://www.yusufsezer.com.tr/html5-input-tipleri/

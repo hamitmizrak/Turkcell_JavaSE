@@ -1,0 +1,39 @@
+
+
+Gorevlendirmeler
+
+Kubilay Alp Agacan / vscode kisayollari
+Tolga Gureli       / html
+
+Odev/Arastirmalar
+
+1) xhtml ile html5 arasindaki farklar nelerdir?
+2) Semantic ve Non-Semantic nedir arasindaki farklar nelerdir?
+
+
+
+Tavsiyeler
+1) Hizlica html yapilari gelistirebilmek icin Emmet (vscode icerisinde default olarak geliyordu sanirim)   ==> https://docs.emmet.io/cheat-sheet/
+2) HTML ogrenmek icin kaynak ==> https://www.w3schools.com/html/
+
+
+
+Online Gelistirme Ortamlari
+
+1) Online editor Codepen  ==> https://codepen.io/pen/
+2) Online editor JsFiddle ==> https://jsfiddle.net/
+3) Online visual s code   ==> https://vscode.dev/
+4) Emmet                  ==> https://docs.emmet.io/cheat-sheet/
+5) Replit		  ==> https://replit.com/
+
+
+
+
+
+
+
+
+
+
+
+

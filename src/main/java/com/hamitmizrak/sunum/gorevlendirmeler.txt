@@ -1,0 +1,12 @@
+Gorevlendirmeler
+
+ali furkan ve tolga : html
+
+alim ve arda : css
+
+baris ve beytullah : git
+
+burakcan ve dogus  : linux
+
+emre ve furkan gurcay : bootstrap
+

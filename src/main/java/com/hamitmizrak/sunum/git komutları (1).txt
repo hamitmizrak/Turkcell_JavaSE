@@ -1,0 +1,66 @@
+git log          ==> Projeniz için oluşturduğunuz commit'lerin tarihçesini incelemek için
+
+git pwd        ==> Şuan çalışılan dosya görüntüleme (present working directory)
+
+git commit -a -m "commit mesajı"  ==> Add yaparak commit etme 
+
+git checkout ==>  commitler arası geçiş yapma 
+
+git checkout master ==>  master branchine geçiş yapar
+
+git stash ==> Tamamlanmamış değişikliklerinizi kesinlikle commit etmemeye özen gösterin. Eğer zaman zaman değişikliklerinizi kayıt
+altına almak isytiyorsanız commit işlemi yerine Git'in Stash özelliğini/komutunu kullanabilirsiniz.
+
+git stash list ==> stash listesini gösterir
+
+git stash pop ==> listenin en üstünde yer alan değişiklik geri yüklenecek ve bu değişiklik listeden
+silinecek.
+
+git branch ==> branchleri gösterir
+
+git branch frontend ==> frontend branch i oluşturur
+
+git checkout frontend ==> frontend branchine geçer
+
+git init ==> git reposu olusturur
+
+git commit -m "message" ==> commit atmamızı sağlar
+
+git add . ==> Yaptığımız değişiklikleri git'e eklememizi sağlar
+
+git branch -M main ==> Ana branchin ismini main olarak değiştirdik
+
+git remote add origin ".git uzantısı" ==> localdeki dosyaları uzak sunucuya ekler
+
+git push -u origin main ==> Eklediğimiz dosyları githuba gönderme işlemi
+
+git commit --amend -m "message" ==> son commitin mesajını değiştirir
+
+git clone .git ==> Uzak sunucudaki bir repoyu locale getirmemizi sağlar
+
+git stash save "stash_adi" ==> stashin adını değiştirmemizi sağlar
+
+git stash apply stash@{0} ==>hashi verilen stashi geri yükler
+
+git stash drop stash@{0} ==> hashi verilen stashi siler
+
+git log --all --decorate --graph --oneline ==> yazmıs oldugumuz commit yapılarını bir satırda sıra ile gösterir
+
+git config --global alias.kisa "git log --all --decorate --graph --oneline"
+git kisa ==> Kisa bir şekilde yukarıdaki yapıyı calıstırmamızı saglar
+
+git status ==> Şuanki durumumuzu gösterir
+
+git branch --all ==> git branch -a ==> Kısaltılması
+
+git branch -D branchadi ==> Adini belirtmiş olduğumuz branchi siler
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,115 @@
+java script frontend
+java backend
+<script> başlıkları açılarak yazılır.
+java script önceden browser üzreinde çalışıyordu node js le beraber server olmaya başladı.
+javascript ecma script ve typescript birleşince bir dil haline gelir
+npm (node package manage) paket yönetim sistemi
+alert() site mesajı (window pop-up)
+alert("deneme")
+window.alert(deneme window)
+document>>html
+window>>hepsi
+CDN linklerinin sırası değişmemeli ilk popper sonra bootstrap
+console.log()==> ne yaptığımızı gösterir.
+external script için <script> src="template.js"></script>çalışılcaksa 
+// js==> tek satırlık yorum
+/* multi line comment çok satırlık yorum */
+window (kodun atası)js deki tüm kodları gösterir
+code pen-jsfiddle-vscode.dev ==> html, js, css ortak çalışılabilcek online çalışma sitesi
+document(bulunduğumuz sayfa
+document.write("deneme)
+
+kullanıcıdan veri almak
+var name=prompt();
+console.log(name)==>adınızı giriniz pop app
+
+variable(değişken)
+var isim="Hamit";
+isim="Hamit M" ;
+isim=44; number
+console.log(isim);
+
+var soyisim="mızrak";
+soyisim44="mızrak";
+44soyisim="mızrak; //sayı ile başlamaz! - Özel simge ile başlamaz
+$ ve _ ile başlayabilir
+türkçe karakter kullanmayalım(üğçöşİ)
+camelCase kullanarak dğeişken oluştur.
+unique
+İngilizce kelimeler ve harfler kullan.
+
+
+//variable initialization
+var deneme;
+sonsole.log()deneme ==>hata verecektir deneme değişkenine bir değer atanmalı.
+
+logic operator: &&=VE    ||=veya
+mathematics operator: + - / * %
+comparion operators : >  >=  <  <=  !  ==  ===
+         = atama
+         == eşit mi (ancak türüne bakma) "5" 5 TRUE
+         === eşit mi (türüne bak) "5" 5 FALSE
+
+
+postfix==> x++ , ++x , y-- ,--y
+
+1byte=8 bit
+bit<byte<gb<tr
+1bit=0
+binary codes(2)==> (0 1)
+octal (8)==>(01234567)
+decimal(10)==>(0123456789)
+hexadecimal(16)==>(0123456789abcdef)
+
+var result1="malatya"
+console.log(typeof result1)//type türü bulmak
+
+var result2=44.36;
+console.log(typeof result2)//type türü bulmak
+
+var result3=true;
+console.log(typeof result3) // type türü bulmak
+
+
+var x1=9,  x2=2;  x3;
+x3=x1+x2;
+console.log(x3)  =konsol çıktısı 11
+
+x3=x1*x2;
+console log(x3)  =konsol çıktısı 18
+
+//cast: dönüştürmek
+/string number
+//database- api - socket
+
+var x1=Number(prompt("lütfen bir sayı giriniz")) ;
+console.log(x1*x1);
+
+undefined
+var x1 ;
+console.log(x1) //tanımlı değil hatası verir değer vermeyince bu sorun alınır
+-----------------------------------
+NAN
+var x2=9/asd;
+console log(x2);       //Nan hatası verir
+-------------------------------------
+isNaN
+
+-------------------------------------
+Infinity
+var x3=8/0
+console.log()   sıfıra bölümü infinity hatası verir
+----------------------------------------
+new
+rem hafızasında yer açmak(doğar)
+---------------------------------------
+null
+hafızayı boşaltmak (ölür)
+--------------------------------------------
+sıfır
+bir değeri vardır ama sıfırdır. çarpmada yutan eleman, toplamada etkisiz
+--------------------------------------------
+
+//escape character
+console.log("\"")==> console çıktısı "
+console.log("'")==>console çıktısı '

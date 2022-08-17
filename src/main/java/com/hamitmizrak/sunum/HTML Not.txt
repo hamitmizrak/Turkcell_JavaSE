@@ -1,0 +1,13 @@
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Scrollspy ====> Html de bir linkin hrefine sayfa içindeki her hangi bir objenin idsini yazarsak,linke tıklandığın da direkmen o id ye sahip alana giderek gösterir.
+  .Bootstrap ile navbar ekleyip body ScrollSpy verip,navbar ile ilişkilendirirsek scrollu elle oynattığımızda o id ye geldiğin navbar otomatikman renklenir.
+   ScrollSpy temel mantığı bu şekilde.
+
+   Navbar ekleyip menüdeki butonları sayfa içi objelerin idsini yazıyoruz.Daha sonra body tagına data-bs-spy="scroll" data-bs-target="#menu" veriyoruz.
+   data-target a navbarın idsini yazıyoruz.Artık scroll ile o idye gelince menü de o buton aktifleşecek.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+

@@ -1,0 +1,31 @@
+  1.grup --> Oak2
+Ali Furkan Erguven
+Alim Yogurtcu
+Arda Kozan
+Ulku Kulekci
+Kubilay Alp Agacan
+  2.grup -->Java8
+Baris Aktas
+Beytullah Zor
+Burak Can Gultekin
+Muhammet Ali Sutay
+  3.grup -->immutable
+Dogus Saglam
+Furkan Gurcay
+Emre Yildiz
+Mehmet Hakan
+  4.grup -->Green Team
+İbrahim Bayramli
+Kadir İrpik
+Muhammet Ali Karaguzel
+  5.grup -->spring is coming
+Mehmet Mustafa Ozcelik
+Mustafa Celik
+Omer Faruk Caliskan
+  6.grup --> heinsberg
+Seyda Ozdemir
+Tolga Gureli
+Tuba Argin
+Yigit Ozen
+
+  

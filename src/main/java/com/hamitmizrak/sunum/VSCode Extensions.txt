@@ -1,0 +1,16 @@
+Auto Close Tag
+Auto Import
+Auto Rename Tag
+Bootstrap 5 Quick Snippets
+CSS-Snippets
+Docker
+ES7+React/Redux/React-Native Snippets
+ESLint
+HTML CSS Support
+JOuery Code Snippets
+Live Saas Compiler
+Live Server
+Material Icon Theme
+Open-in-browser
+Prettier(olabilir)
+ReactJS Code Snippets

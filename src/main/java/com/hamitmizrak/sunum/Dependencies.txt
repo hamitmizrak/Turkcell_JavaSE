@@ -1,0 +1,14 @@
+--spring configuration processor
+***Seçilenler***
+spring boot dev tools
+lombok
+spring web
+thymeleaf
+spring securty
+spring data jpa
+h2 database
+postgresql driver
+validation
+java mail sender
+spring boot actuator
+spring data jdbc

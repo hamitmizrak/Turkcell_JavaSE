@@ -1,0 +1,12 @@
+#Hafta 2 Ders 1
+
+
+<section> --> <section> etiketi belgede bir bölüm tanımlar.
+ Bölümler üstbilgi, altbilgi gibi sayfanın herhangi bir bölümü olabilir.
+Örnek: nav , aside , header , footer gibi bunlar her sayfada olur ve ux açısından oldukça 
+değerlidir. Ancak o sayfanın içeriği < section > içerisinde olur. Bu amaçlada kullanılır.
+
+
+
+kaynak --> https://www.w3schools.com/html/html5_semantic_elements.asp
+kaynak --> https://www.ofisimo.com/blogdetay-ders-6-html-5-yapisal-etiketler-255.html

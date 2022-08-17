@@ -1,0 +1,22 @@
+Map<String, Object> mapList = new LinkedHashMap<String, Object>();
+mapList.put("1", "İstanbul");
+mapList.put("2", "İzmir");
+mapList.put("3", "Bursa");
+mapList.put("4", "Ankara");
+
+//******* 4- Iterator *******
+// Key benzersiz olmalı: ve key için(Set) kullanacağım
+Set<String> set = mapList.keySet();
+Iterator iterator = set.iterator();
+while (iterator.hasNext()) {
+	System.out.println(mapList.get(iterator.next()));
+}
+		
+//****** 5- M-E-l-es *******
+for (Map.Entry<String, Object> temp : mapList.entrySet()) {
+	System.out.println(temp);
+}
+		
+//****** 6- Stream ForEach ******
+mapList.entrySet().forEach(System.out::println);
+

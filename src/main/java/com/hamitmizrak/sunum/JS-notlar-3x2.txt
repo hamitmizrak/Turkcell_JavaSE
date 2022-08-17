@@ -1,0 +1,26 @@
+
+--> create object
+object.database="postgresql";
+
+
+--> delete object attributes
+delete object.soyadi
+
+
+--> Nested Object - 3 Farklı obje çağırımı: 
+alert(object.spring.database)
+alert(object.spring["mvc"])
+alert(object["spring"]["core"])
+
+--> object constructor
+    javada ==> parametreli constructor
+Örnek: 
+function Student(adi,soyadi,plaka){
+this.adi=adi;
+this.soyadi=soyadi;
+this.plaka=plaka;
+console.log(this);
+}
+
+--> DOM : HTML için kullanılan doküman nesne modelidir. HTML Elementlerini objeler olarak, HTML elementlerinin tüm özelliklerini, HTML elementlerine erişmek için metotları, tüm HTML elementleri için olayları tanımlar. Diğer bir deyişle HTML DOM yeni elementler eklemek, elementleri değiştirmek veya silmek için kullanılır.
+

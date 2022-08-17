@@ -1,0 +1,54 @@
+
+Kurulacak Programlar
+1) google chrome
+2) git vcs (versiyon kontrol sistemi)
+3) vscode
+4) Node.js
+5) Eclipse EE
+6) Typora masaustu uygulamasi (Markdown Editor)
+8) Postgresql (GUI Pgadmin 4)
+10) Docker ( GUI Docker Desktop)
+11) JDK 18
+12) Github Desktop
+
+
+Tavsiyeler
+1) Bilgisayar ve programlarin dillerini(chrome vs) ingilizce, problem cozme konusunda cok yardimci olacaktir.
+2) Dizin isimlerinde turkce harf kullanmayin. (MDN'in tavsiyesi : dizin-adi/dosya-adi.html seklinde)
+
+VsCode Eklentileri
+1) Bracket Colorizer
+2) Auto Close Tag
+3) Auto Import
+4) Auto Rename Tag
+5) Bootstrap 5 Quick Snippets
+6) Css Snippets
+7) Docker
+8) ES7+ React/Redux/React-Native snippets
+9) Eslint
+10) Html/CSs Support
+11) Jquery Code Snippets
+12) Live Saas Compiler
+13) Live Server
+14) Material Icon Theme
+15) Path intelinsense
+16) Prettier
+17) React.js code snippets
+18) Open in Browser(sanirim vscode'ta yerlesik olarak var)
+
+Eclipse EE eklentileri
+1) Darkest Dark Theme
+
+
+Gorevlendirmeler
+1) git vcs  (Baris Aktas, Kadir Irpik)
+2) linux komutlari (Tolga Gureli, Mehmet Hakan)
+3) vscode (Tuba Argin)
+4) eclipse configuration (Furkan Gurcay)
+
+Arastirma Odevleri
+1) URI ve URL arasindaki fark nedir?
+2) HTTP  yapisi nedir?
+3) NPM nedir?
+4) NODE.js nedir?
+5) Neden Java 8?

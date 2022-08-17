@@ -1,0 +1,13 @@
+#Hafta 1 Ders 5
+
+<nav>
+<header>
+<main>
+<footer>
+<header>
+<body data-target=".nav" data-offset="44" data-spy="scroll">
+role=dialog
+
+
+
+kaynak --> https://www.w3schools.com/html/html5_semantic_elements.asp

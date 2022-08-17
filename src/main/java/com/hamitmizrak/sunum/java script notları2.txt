@@ -1,0 +1,233 @@
+(jSON yapısı)
+// var nameSurname = {
+//   "name": 'Hamit',
+//   "surname": 'Mızrak',
+// }
+
+// //1-Çözüm (static)
+// //json'ı string'e çevirdim
+// var nameAndSurnameJsontoString = JSON.stringify(nameSurname)
+// //ipucu almak (indexOf veya search)
+// var searchResult = nameAndSurnameJsontoString.search('Hamit')
+// document.write("<br>"+searchResult)
+// //çıktısı: 9 başlıyor
+// var name = nameAndSurnameJsontoString.substring(9, 14)
+// var surname = nameAndSurnameJsontoString.substring(27, 33)
+// document.write('<br>' + 'Adım: ' + name + '<br> Soyadım: ' + surname)
+// var adi=JSON.parse
+
+// document.writeln('<br>'+"****************************")
+
+// //2-Çözüm (static)
+// //json'ı string'e çevirdim
+// var nameAndSurnameJsontoString2 = JSON.stringify(nameSurname)
+// //ipucu almak (indexOf veya search)
+// var searchResult = nameAndSurnameJsontoString2.search('Hamit');
+// var searchResult2 = nameAndSurnameJsontoString2.search('Mızrak')
+
+// //çıktısı: 9 başlıyor
+// var name = nameAndSurnameJsontoString2.substring(searchResult, (searchResult+5))
+// var surname = nameAndSurnameJsontoString2.substring(searchResult2, (searchResult2+6))
+// document.write('<br>' + 'Adım: ' + name + '<br> Soyadım: ' + surname)
+// var adi=JSON.parse
+
+// document.writeln('<br>'+"****************************")
+
+// //3-Çözüm (dinamik-1)
+// //JSON.stringfy()
+// //JSON.parse()
+// var dinamic=JSON.stringify(obje);
+// var parse=JSON.parse(dinamic);
+
+// var name=parse.adi;
+// document.writeln('<br>'+name)
+
+// var surname=parse.soyadi;
+// document.writeln('<br>'+surname)
+
+// document.writeln('<br>'+"****************************")
+
+// //4-Çözüm (dinamik-1)
+// //JSON.stringfy()
+// //JSON.parse() (dinamik-2 clean codes)
+
+// //monad
+// document.writeln('<br>'+ JSON.parse(JSON.stringify(obje)).adi.toUpperCase()+" "+JSON.parse(JSON.stringify(obje)).soyadi);
+
+//////////////////////////////////////////////////////////////
+//Fonksiyon:
+//Normal Function
+//1-) returnsuz, parametresiz function
+// function functionName1(){
+//   document.writeln('<br>'+"returnsuz, parametresiz function")
+// }
+// functionName1()
+
+// //2-) returnsuz, parametreli function
+// function functionName2(ekmekTuru){
+//   document.writeln('<br>'+"returnsuz, parametresiz function: "+ekmekTuru)
+// }
+// functionName2('Trabzon ekmeği')
+
+// //3-) returnlu, parametrelisiz function
+// function functionName3(){
+//   return 'returnlu, parametresiz function 200-6 = 194TL'
+// }
+// var temp3= functionName3();
+// document.writeln('<br>'+temp3)
+
+// //4-) returnlu, parametreli function
+// function functionName4(money){
+//   var count=money-6;
+//   return 'returnlu, parametreli function Kalan Para: '+count;
+
+// }
+// var temp4= functionName4(200);
+// document.writeln('<br>'+temp4);
+_______________________________________________________________________________
+//senkron: bir işlem biter diğerine geçer. Sırayla çalışır.
+//setTimeOut() ==> function istediğimiz zaman aralığında çalışmasını sağlarız.
+// function merhaba1(){
+//   document.writeln('<br>'+"1.function")
+// }
+// setTimeout(merhaba1,3000);
+
+// function merhaba2(){
+//   document.writeln('<br>'+"2.function")
+// }
+// merhaba2()
+______________________________________________________________________
+(try-catch metodları hata yakalayıp devam etmemiz gereken durumlarda kullanılan yapı)
+//try catch: exception handling
+// try {
+//   alert44('Merhabalar')
+// } catch (err) {
+//   document.writeln('<br>' + err.message);
+//   document.writeln('<br>' + err.name);
+// } finally {
+//   document.write('<br>' + 'db.close()')
+// }
+// document.writeln('<br>' + 'diğer satır')
+
+(if ve else yapıları methotta koşul istemek )
+//conditional:
+//if else
+// var number = '4'
+// if (number == 4) {
+//   document.write('<br>' + 'eşittir')
+// } else {
+//   document.write('<br>' + 'değildir')
+// }
+__________________________________________
+// //if else
+// if (number == 4) document.write('<br>' + 'eşittir')
+// else document.write('<br>' + 'değildir')
+__________________________________________________________________________--
+(ternary yapısı)
+// //ternary
+// var ternary = number == 4 ? 'eşittir' : 'değildir'
+// document.write('<br>' + ternary)
+// document.write('<br>' + '++++++++')
+________________________________________________________________________
+// /////////
+// //if elseif else
+// var day = 'persembe'
+// if (day === 'pazartesi') {
+//   document.write('<br>' + '1-pazartesi')
+// } else if (day === 'sali') {
+//   document.write('<br>' + '2-sali')
+// } else if (day === 'carsamba') {
+//   document.write('<br>' + '3-carsamba')
+// } else if (day === 'persembe') {
+//   document.write('<br>' + '4-persembe')
+// } else if (day === 'cuma') {
+//   document.write('<br>' + '5-cuma')
+// } else if (day === 'cumartesi') {
+//   document.write('<br>' + '6-cumartesi')
+// } else if (day === 'pazar') {
+//   document.write('<br>' + '7-pazar')
+// } else {
+//   document.write('<br>' + 'gün yanlış çalışıldı')
+// }
+________________________________________________________________________
+  (Switch case yapısı)
+// //switch -case
+// switch (day) {
+//   case 'pazartesi':
+//     document.write('<br>' + '1-pazartesi')
+//     break
+
+//   case 'sali':
+//     document.write('<br>' + '2-sali')
+//     break
+
+//   case 'carsamba':
+//     document.write('<br>' + '3-carsamba')
+//     break
+
+//   case 'persembe':
+//     document.write('<br>' + '4-persembe')
+//     break
+
+//   case 'cuma':
+//     document.write('<br>' + '5-cuma')
+//     break
+
+//   case 'cumartesi':
+//     document.write('<br>' + '6-cumartesi')
+//     break
+
+//   case 'pazar':
+//     document.write('<br>' + '7-pazar')
+//     break
+
+//   default:
+//     document.write('<br>' + 'gün yanlış çalışıldı')
+//     break
+// }
+
+________________________________________________________________________
+//return break continue 
+//return   : birşey döndermek (function durdurmak)
+//break    : döngüyü kırmak
+//continue : sadece o şart için çalışma ama sonrasında devam et
+_____________________________________________________________________
+(döngülerde verilen indeksi ne kadar arttıracağını ve nasıl arttıracağını belirler aşağıda birer artırım yapılmıştır.)
+//Loop
+//iterative for
+//1 artımak 
+// i++
+// i=i+1
+// i+=1
+
+document.writeln("<br>"+ (1+2+3+4+5+6+7+8+9+10)+"<br>")
+_________________________________________________________________
+(döngü çeşitleri)
+(for döngüsü)
+//for
+var sum=0;
+for (var i = 1; i <=10; i++) {
+  sum=sum+i;
+}
+document.writeln("<br>"+ sum+"<br>")
+--------------------------------------------------------------------
+(while döngüsü)
+//while
+var sum2=0;
+var x = 1;
+while(x <=10){
+  sum2=sum2+x;
+  x++;
+}
+document.writeln("<br>"+ sum2+"<br>")
+---------------------------------------------------------------------------
+(do-while döngüsü)
+//do-while: şart sağlansın yada sağlanması 1 kere çalışır.
+var sum3=0;
+var y = 1;
+do{
+  sum3=sum3+y;
+  y++;
+}while(y<=10);
+
+document.writeln("<br>"+ sum3+"<br>")

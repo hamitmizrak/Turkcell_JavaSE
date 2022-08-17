@@ -1,0 +1,18 @@
+
+--> JQUERY: JQuery'nin temel amacı, web sitelerinde JavaScript kullanmayı kolaylaştırmaktır. JQuery, birçok satır JavaScript kodu gerektiren birçok görevi tek bir kod satırına sığdırır. Ayrıca, JavaScript içinde karmaşık olabilen AJAX çağrıları ve DOM manipülasyonu gibi işlemlerin de çoğunu basitleştirir.
+
+   --Kullanımı: $(selector).attributes()
+
+# .text("") -- sadece text yapısını değiştirir. (JS'deki innerText() gibi.)
+
+#.css -- css bileşenlerini ekler, ek olarak obje bileşenlerine tümden erişmemizi sağlar. 
+
+# $(document).ready(function(){}{}) -- JavaScript kodlarının sorunsuz çalışabilmesi için internet sayfasının tam yüklenmiş olması gerekir. ready() fonksiyonu bize sayfanın hazır hale geldiğini, dolayısıyla artık işlem yapılabileceğini belirtir. Herhangi bir jQuery kodunun belgenin yüklenmesi sonuçlanmadan çalıştırılmasını önlemektir (ready-hazır).
+
+# $(function){
+	$(#"button
+
+
+--> JS > HTML > CSS -- yüklenme önceliği.
+
+ 

@@ -1,0 +1,20 @@
+1. Hafta 3.Gün
+
+importnant > inlineCSS > internalCSS > externalCSS
+
+inline css   =>>   <p style = "color:red;">
+
+internal css =>>   <style></style>
+
+id kullanımı =>>   <div id="div_id"></div> 
+ 
+p.paragraf   =>>   class ismiyle oluşturur
+
+link:css     =>>   <link rel="stylesheet" href="style.css">
+
+url örneği   =>>   <a href="#"></a>
+
+icon ekleme (awesome) =>> <i class="fa-regular fa-address-card> 
+
+header
+

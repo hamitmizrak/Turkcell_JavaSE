@@ -1,0 +1,3 @@
+-Java 8 Ders Notları-
+list.stream().forEach(System.out::print)
+list.forEach(System.out::print)

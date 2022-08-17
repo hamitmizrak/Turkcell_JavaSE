@@ -1,0 +1,31 @@
+Lambda Expression (Lambda Function)
+
+(x)->{x*5};
+
+Lambda Expression yazarken dikkat edeceğimiz hususlar
+1-) @FunctionInterface ==> 1 tane gövdesiz metot yaz
+2-) Parametre sayısı ve türü çağıranda aynı olmalı (temp)=>{}
+3-) return varsa return türü yazılır
+
+@FunctionalInterface ==> interface 1 tane gövdesiz metot yazabilirsin başka
+
+@FunctionalInterface
+interface ILambdaExpressionData {
+	public void deneme(String adi);
+}
+
+ILambdaExpressionData expressionData2 = (temp) -> {
+	System.out.println(temp + " function interface yapısı");
+};
+
+
+Stream API
+
+Stream: 2 grup çalışma sitili vardır.
+1-) Sequential (Senkron: sadece 1 işlem yapar)
+2-) Paralel (Asenkron:Aynı anda birden fazla işlem yapabilir.)
+
+Çeşitleri: intStream,LongStream,DoubleStream,Stream
+int toplam = listem2.stream().filter(temp -> temp % 2 == 0).reduce(0, (x, y) -> x + y);
+Predicate<Integer> ciftSayilar = temp -> temp % 2 == 0;
+int toplam2 = listem2.stream().filter(ciftSayilar).reduce(0, (x, y) -> x + y);

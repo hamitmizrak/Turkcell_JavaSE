@@ -1,0 +1,42 @@
+----MATH-------
+
+Math.random() -- random sayı atar.
+Math.min(a,b,c,d) -- min sayıyı atar.
+Math.max(a,b,c,d) -- max sayıyı atar.
+Math.sqrt(a) -- sayının karekökünü alır.
+Math.pow(a,b) -- a üzeri b alır.
+Math.abs(a,b) -- mutlak değeri alır.
+
+---------------
+
+#monad: bir kodun çıktısı başka kodun girdisi ise.
+
+-----NUMBER-----
+Bilimsel örn: 14E-5 --> 0.00014
+Binary (2 tabanda 10 tabana çevirme) örn: 0b00111 --> 7
+Octal (8 tabanda 10 tabana çevirme) örn:  07011 --> 28745
+Hexadecimal (16 tabanda 10 tabanına çevirme) örn: 17
+Decimal (10 tabandan diğer tabanlara)
+	örn: document.write(decimal.toString(8)); --> 12
+----------------
+
+isNaN = false --> sayıdır.
+isNan = true --> sayı değildir.
+
+-----STRING-----
+.length -- harf sayısı
+.trim() -- trimlenmiş harf saysı
+.toLowerCase() -- hepsi küçük harf
+.toUpperCase() -- hepsi büyük harf
+.startsWith('h') -- h ile başlayan
+.endsWith(' ') -- ' ' ile biten
+.concat(" -sona eklendi") -- sona ekler
+.charAt("0") -- 0'daki eleman
+.indexOf("-") -- konumu
+.lastIndexOf("-") -- son konumu
+.replace(yenikelime, eskikelime)
+.substring(0,4) -- 0 <= X <= 4-1
+
+-----------------
+
+Stringfy: JSON verisini string'e çevirmek.

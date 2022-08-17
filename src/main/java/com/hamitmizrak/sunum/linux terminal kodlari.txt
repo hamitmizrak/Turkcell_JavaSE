@@ -1,0 +1,14 @@
+1. Hafta 1. ve 3.Gün
+pwd 
+ls -al
+cat >> deneme.txt
+cd filename
+ls -a
+cd .
+cd ..
+cd 
+cd dizinadi
+whoami
+whatis
+which
+clear

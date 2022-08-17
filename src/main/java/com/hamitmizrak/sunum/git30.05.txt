@@ -1,0 +1,23 @@
+git log          ==> Projeniz için oluşturduğunuz commit'lerin tarihçesini incelemek için
+
+git pwd        ==> Şuan çalışılan dosya görüntüleme (present working directory)
+
+git commit -a -m "commit mesajı"  ==> Add yaparak commit etme 
+
+git checkout ==>  commitler arası geçiş yapma 
+
+git checkout master ==>  master branchine geçiş yapar
+
+git stash ==> Tamamlanmamış değişikliklerinizi kesinlikle commit etmemeye özen gösterin. Eğer zaman zaman değişikliklerinizi kayıt
+altına almak isytiyorsanız commit işlemi yerine Git'in Stash özelliğini/komutunu kullanabilirsiniz.
+
+git stash list ==> stash listesini gösterir
+
+git stash pop ==> listenin en üstünde yer alan değişiklik geri yüklenecek ve bu değişiklik listeden
+silinecek.
+
+git branch ==> branchleri gösterir
+
+git branch frontend ==> frontend branch i oluşturur
+
+git checkout frontend ==> frontend branchine geçer

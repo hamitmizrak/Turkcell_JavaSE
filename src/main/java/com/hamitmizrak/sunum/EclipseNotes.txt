@@ -1,0 +1,13 @@
+Ekran Perspektifi bozulursa ==> Sağ üste Java butonu eski hanile geri getirir.
+
+Git Staging==>  ++ All Stage -- All unstage
+
+Token oluşturma==>  GitHub>  Developer Setting > Personal Access Token > Generate Full Token > Full Yetki
+
+Dosya Import Etme ==> File >Import>General>Projects from Folder or Archive (Dosya üzeri sağ click >Team>Pull)
+
+JRE hatası için ==>Properties>Java Build Path>Lİbrariy>Edit 
+
+Eclipse formatter ==>ctrl+shift+f 
+
+JRE Hatası için ==>File>Properties>Java Build Path > Libraries > JRE System Librariy > Edit > Alternate JRe >Aplly

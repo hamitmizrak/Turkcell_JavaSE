@@ -1,0 +1,49 @@
+### 20.06.2022 Monday ###
+ IDE: Integrated Development Environment
+ API: Application Programming Interface
+ JDK: Java Development Kit
+ JVM: Java Virtual Machine
+ JRE: Java Runtime Environment
+ JIT: Just in Time 
+ OOP: Object Oriented Programming
+ SOLID ==> S: SRP: Single Responsibility Principle 
+           O: OSP: Open Closed Principle
+           L: LSP: Liskov Substitution Principle
+           I: ISP: Interface Segregation Principle
+           D: DIP: Dependency Inversion Principle 
+
+### 05.07.2022 Tuesday ###
+ DRY: Don’t Repeat Yourself
+ KISS: Keep It Simple, Stupid
+ YAGNI: You Aren’t Gonna Need It
+ RREP/REP: The Reuse/Release Equivalence Principle
+ CCP: Common Closure Principle
+ POJO: Plain Old Java Object
+ CDI: Context and Dependency Injection
+ UML: Unified Modelling Language 
+ MVC: Model-View-Controller
+
+### 06.07.2022 Wednesday ###
+ DevOps: Developers and Operations 
+ CPU: Central Process Unit
+ RAM: Random Access Memory
+ IT: Information Technology
+
+### 18.07.2022 Monday ###
+ SQL: Structured Query Language
+ T-SQL: Transact-Structured Query Language
+ SEQUEL: Structured English Query Language
+ DML: Data Manipulation Language
+ DDL: Data Definition Language
+ DCL: Data Control Language
+ TCL: Transaction Control Language
+ DQL: Data Query Language
+ DBMS: Database Management System
+ RDBMS: Relational Database Management System
+ PK: Primary Key
+ FK: Foreign Key
+
+
+
+
+

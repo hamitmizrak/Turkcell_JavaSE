@@ -1,0 +1,97 @@
+CSS
+
+*               => tüm tagler içerisindeki 
+#               => id yapısına göre tag bulma
+.               => class yapısına göre tag bulma
+html{
+font-size:15px; => yazı boyutunu belirtir.
+}               => uzunluk belirtilen yerlerde rem olarak verildiğinde, html içerisinde verilen font-size'a göre ayarlanır.
+
+isim:link{}       => Link tıklanmamış durum
+isim:visited{}    => Link tıklanmış durum
+isim:hover{}      => Linkin üzerine gelinmiş durum
+isim:active{}     => Linke basılı olduğu durum
+
+.clear:before{
+    content: "";
+    clear: both;
+    display: block;
+}                   =>Clear both kendisinden bir önceki float parametresini temizler ve kendisinden sonraki gelen nesneyi temiz bir yolda tutar.Yani kısaca clear both komutuna float temizleyici diyebiliriz.
+
+font-style      => Yazı tipini ayarlar. italic, bold vs.
+text-decoration: underline;    => Altı çizilii
+text-decoration: line-through; => Üzeri çizili
+text-decoration: none;         => Müdahele yok
+text-transform: capitalize;    => Kelimelerin ilk harfleri büyük
+text-indent                    => Paragraf boşluğu,
+word-spacing                   => Kelimeler arası boşluk
+letter-spacing                 => Harfler arası boşluk
+line-height                    => Satır yüksekliği
+column-count: 3;               => Sütun sayısı
+column-rule: 10px solid red;   => Sütünlar arası çizgi
+
+div,p{} => hem div hem de p taglerini kapsar. 
+div p{} => div'ler altında bulunan bütün p'leri kapsayan selector.
+div>p{} => sadece div'in altında olan p'leri kapsar (div'in altında başka bir tag içerisinde p tagi olanları kapsamaz.)
+div+p{} => div'e kardeş olan ilk p tagini kapsar.
+div~p{} => div'e kardeş olan tüm p taglerini kapsar.
+
+width           => yazılan tag'in genişliğini belirler.
+height          => yazılan tag'in yüksekliğini belirler.
+max-height      => yazılan tag'in maksimum yüksekliğini belirler.
+min-height      => yazılan tag'in minimum yüksekliğini belirler.
+max-width       => yazılan tag'in maksimum genişliğini belirler.
+min-width       => yazılan tag'in minimum genişliğini belirler.
+
+margin          => yazılan tag dışından boşluk bırakır.
+margin-top margin-bottom margin-left margin-right
+padding         => yazılan tag içerisinden boşluk bırakır.
+
+background-image: url("../picture/resim1.jpg"); => Arka plana resim koyar.
+background, background color => arka plan rengini belirler. 
+background: rgba             => arka plan rengini ve şeffaflığını belirler. En son değer 0 ile 1 arasında değer alır.
+background: rgb              => arka plan rengini belirler.
+background-position:         => arka plan resmimin konumunu ayarlar.
+background-size              => arka plan resmimin boyutunu ayarlar.
+
+color:          => yazı rengini belirler.  
+font-family     => Yazı tipini belirler.
+list-style-type => Listeleme tipini değiştirir.
+
+border: 1px solid black  => Çerçeve
+border-radius   => etrafındaki çerçevenin köşelerini yumuşatır.
+
+display: inline => div yapılarının aynı satırda olmasını sağlar veya alt alta olan yapıların aynı satırda olmasını sağlar.
+display: inline-block => Elementler aynı satırda konumlandırır. Yükseklik ve genişlik değerleri değiştirilebilir.
+display: block  => Alabileceği maksimum değeri alır ve satırı kaplar.
+display: none   => Sayfa üzerinde gizliyor (Yer kaplamıyor)
+
+box-sizing      => Box-sizing bir elementin içeriğinin genişlik ve yükseklik değerlerinin neresi referans alınarak belirlenmesi sağlar.
+box-sizing: border-box;  =>  Elementin genişlik ve yüksekliğine border ve padding değerleri dahildir.
+box-sizing: content-box; =>  Elementin genişlik ve yüksekliğine border ve padding değerleri dahil değildir.
+
+float:          => Aynı satırın içerisinde konumunu belirler.
+transform:      => İki boyutlu veya üç boyutlu eksende döndürme işlemi yapar.
+transitions:    => CSS geçişlerini belli bir süre sonra değiştirir.
+
+text-align      => Yatay eksende konumlandırma
+z-index: -1;    => tag'in arka plana gitmesini sağlar.
+cursor (pointer, none vs.)=> imleci değiştiriyor.
+
+box-shadow      => Bir ögeye bir veya daha fazla gölge ekler
+text-shadow     => Bir yazıya bir veya daha fazla gölge ekler
+
+CSS ölçüm birimlerinde px, rem, %, cm, vh kullanılır.
+
+VH
+Viewport height. vw biriminde olduğu gibi buda pencerenin yüksekliğini baz alır.
+Örneğin 1vh = tarayıcı penceresinin yüksekliğinin yüzde 1’i.
+
+REM
+html etiketinin font-size değeri 12px olsun. h1 etiketine 2rem, h2 etiketine 1.5rem verirseniz. h1 etiketinin font-size değeri 24px olur, h2 etiketinin ise 18px olur.
+
+﻿%
+Yüzde. Üst elementi baz alır.
+
+@media screen and (min-width: 100px){}
+@media screen and (max-width: 100px){}   => pencere genişliği 100 pikselden küçük veya büyük olursa yapılacak olan css değişiklikleri
